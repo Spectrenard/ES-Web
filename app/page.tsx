@@ -1,13 +1,13 @@
 import Navbar from "@/components/Navbar";
+import Particles from "@/components/ui/particles";
 import ShimmerButton from "@/components/ui/shimmer-button";
 import Image from "next/image";
-import Particles from "@/components/ui/particles";
 
 export default function Home() {
   return (
     <div className="bg-gradient-to-b from-neutral-950 to-black min-h-svh relative">
       <Particles
-        className="absolute inset-0 z-10"
+        className="absolute inset-0 z-20 pointer-events-none"
         quantity={100}
         staticity={50}
         color="#4B5563"
@@ -15,8 +15,8 @@ export default function Home() {
 
       <Navbar />
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-32 text-white relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/20 via-transparent to-transparent" />
+      <section className="container mx-auto px-4 py-32 text-white relative z-10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-600/20  via-transparent to-transparent" />
 
         <div className="max-w-4xl mx-auto text-center relative">
           <div className="py-40">
@@ -24,10 +24,10 @@ export default function Home() {
               <span className="text-blue-400">✨ Réponse en moins de 24h</span>
             </div>
 
-            <h1 className="text-6xl font-normal mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 font-kanit ">
-              Transformez vos idées en réalité
+            <h1 className="text-7xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 font-instrument ">
+              Transformons vos idées en réalité
             </h1>
-            <p className="text-xl text-gray-400 mb-12 leading-relaxed">
+            <p className="text-md text-gray-500 mb-12 mx-auto max-w-[750px]">
               Explorez un univers de possibilités infinies et laissez-nous vous
               guider dans la création d'une présence en ligne qui reflète
               parfaitement l'essence et la vision de votre marque.

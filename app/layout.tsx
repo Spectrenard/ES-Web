@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Kanit } from "next/font/google"; // Import des polices
+import { Instrument_Sans, Inter } from "next/font/google"; // Import des polices
 import "./globals.css";
 
 // Configuration de Inter
@@ -8,11 +8,11 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-// Configuration de Kanit
-const kanit = Kanit({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+// Configuration de Instrument Sans
+const instrumentSans = Instrument_Sans({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-kanit",
+  variable: "--font-instrument_sans",
 });
 
 export const metadata: Metadata = {
@@ -27,7 +27,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className="dark">
-      <body className={`${inter.variable} ${kanit.variable} font-sans`}>
+      <body
+        className={`${inter.variable} ${instrumentSans.variable} font-sans`}
+      >
         {children}
       </body>
     </html>

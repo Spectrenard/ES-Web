@@ -1,0 +1,10 @@
+<svg id="esweb-logo" width="218" height="40" viewBox="0 0 218 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Partie gauche (symbole) reste identique -->
+  <path class="ccustom" fill-rule="evenodd" clip-rule="evenodd" d="M93.2277 0C104.273 0 113.228 8.95431 113.228 20C113.228 31.0457 104.273 40 93.2277 40C82.182 40 73.2277 31.0457 73.2277 20C73.2277 8.95431 82.182 0 93.2277 0Z" fill="white"/>
+  
+  <!-- Texte ES -->
+  <path class="ccustom" d="M122.355 29.5238H134.018V26.5352H127.355V19.9352H133.018V16.9467H127.355V14.9352H134.018V11.9352H122.355V29.5238Z" fill="white"/>
+  
+  <!-- Texte WEB -->
+  <path class="ccustom" d="M140.023 29.5238H144.686L146.754 15.9352L149.828 29.5238H154.354L157.44 15.9352L159.508 29.5238H164.171L160.89 11.9352H155.438L152.181 25.5238L148.924 11.9352H143.472L140.023 29.5238Z" fill="white"/>
+</svg>

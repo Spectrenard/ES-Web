@@ -1,0 +1,9 @@
+<svg id="logo-76" width="218" height="40" viewBox="0 0 218 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo original modifié en blanc -->
+  <path class="ccustom" fill-rule="evenodd" clip-rule="evenodd" d="M93.2277 0C104.273 0 113.228 8.95431 113.228 20C113.228 31.0457 104.273 40 93.2277 40C82.182 40 73.2277 31.0457 73.2277 20C73.2277 8.95431 82.182 0 93.2277 0Z" fill="white"/>
+  <path class="ccustom" d="M92.5048 1.49659C90.2231 1.81769 88.0505 3.65108 86.364 6.7174C85.8748 7.60683 85.4334 8.58946 85.0488 9.65044C87.342 9.07417 89.8611 8.73442 92.5048 8.68187V1.49659Z" fill="white"/>
+  <!-- ... autres paths du logo en blanc ... -->
+  
+  <!-- Ajout du texte ES WEB -->
+  <text x="120" y="25" font-family="Arial" font-size="24" font-weight="bold" fill="white">ES WEB</text>
+</svg>

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import ShimmerButton from "@/components/ui/shimmer-button";
 import Image from "next/image";
 import LogoSvg from "@/assets/svg/logoipsum-287.svg";
 

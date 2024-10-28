@@ -11,8 +11,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-inter)"],
-        kanit: ["var(--font-kanit)"],
-        relieve: ["var(--font-relieve)"],
+        instrument: ["var(--font-instrument_sans)"],
       },
       colors: {
         background: "hsl(var(--background))",
@@ -69,6 +68,7 @@ const config: Config = {
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         "arc-line": "arcLine 3s linear infinite",
         line: "line 3s linear infinite",
+        "shiny-text": "shiny-text 8s infinite",
       },
       keyframes: {
         "shimmer-slide": {
@@ -96,8 +96,20 @@ const config: Config = {
           },
         },
         scroll: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-100%)" },
+          "0%": {
+            transform: "translateX(0)",
+          },
+          "100%": {
+            transform: "translateX(-100%)",
+          },
+        },
+        "shiny-text": {
+          "0%, 90%, 100%": {
+            "background-position": "calc(-100% - var(--shiny-width)) 0",
+          },
+          "30%, 60%": {
+            "background-position": "calc(100% + var(--shiny-width)) 0",
+          },
         },
       },
     },
