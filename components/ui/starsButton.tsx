@@ -43,16 +43,20 @@ const StarWarsButton: React.FC<StarWarsButtonProps> = ({ text }) => {
   return (
     <motion.button
       ref={buttonRef}
-      className="text-md relative overflow-hidden rounded-full border-2 border-white/5 bg-neutral-950 px-8 py-2.5 font-semibold text-white focus:outline-none"
+      className="text-md relative overflow-hidden rounded-full px-8 py-2.5 font-semibold text-white focus:outline-none"
       style={{
+        background:
+          "linear-gradient(135deg, #0f172a 0%, #1e40af 50%, #3b82f6 100%)",
+        backgroundClip: "padding-box",
+        WebkitBackgroundClip: "padding-box",
         boxShadow:
-          "0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3)",
+          "0 0 5px rgba(255, 255, 255, 0.3), 0 0 10px rgba(255, 255, 255, 0.2)",
       }}
       animate={controls}
       whileTap={{ scale: 0.95 }}
       whileHover={{
         boxShadow:
-          "0 0 15px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.5)",
+          "0 0 8px rgba(255, 255, 255, 0.4), 0 0 15px rgba(255, 255, 255, 0.3)",
       }}
     >
       {stars.map((star) => (

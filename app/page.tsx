@@ -34,7 +34,7 @@ export default function Home() {
             </p>
 
             <div className="flex gap-6 justify-center">
-              <StarWarsButton text="Obtenir votre devis gratuitement" />
+              <StarWarsButton text="Obtenez votre devis gratuitement" />
             </div>
           </div>
         </div>
