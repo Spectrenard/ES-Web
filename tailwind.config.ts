@@ -57,22 +57,19 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       animation: {
+        "infinite-scroll": "scroll 20s linear infinite",
         "shimmer-slide":
           "shimmer-slide var(--speed) ease-in-out infinite alternate",
-        "vertical-shimmer": "vertical-shimmer 8s linear infinite",
         "spin-around": "spin-around calc(var(--speed) * 2) infinite linear",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
-        line: "line-animation 10s linear infinite",
+        "arc-line": "arcLine 3s linear infinite",
+        line: "line 3s linear infinite",
       },
       keyframes: {
         "shimmer-slide": {
           to: {
             transform: "translate(calc(100cqw - 100%), 0)",
           },
-        },
-        "vertical-shimmer": {
-          "0%": { transform: "translateY(-100%)" },
-          "100%": { transform: "translateY(100vh)" },
         },
         "spin-around": {
           "0%": {
@@ -93,9 +90,9 @@ const config: Config = {
             "offset-distance": "100%",
           },
         },
-        "line-animation": {
-          "0%": { top: "calc(0% - 96px)" },
-          "100%": { top: "calc(100% + 96px)" },
+        scroll: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
         },
       },
     },
