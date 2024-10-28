@@ -1,16 +1,24 @@
 import Link from "next/link";
 import ShimmerButton from "@/components/ui/shimmer-button";
+import Image from "next/image";
+import LogoSvg from "@/assets/svg/logoipsum-287.svg";
 
 export default function Navbar() {
   return (
     <div className="fixed top-4 left-1/2 -translate-x-1/2 w-[60%] max-w-7xl z-50">
       <nav className="w-full px-6 py-4 backdrop-blur-md bg-white/5 border border-white/10 rounded-full">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-white font-bold text-xl">
-            Logo
+          <Link href="/" className="text-white">
+            <Image
+              src={LogoSvg}
+              alt="ES Web Logo"
+              width={120}
+              height={40}
+              className="w-auto h-8"
+            />
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-8 mx-auto">
             <Link
               href="#features"
               className="text-gray-300 hover:text-white transition-colors"
@@ -21,7 +29,7 @@ export default function Navbar() {
               href="#pricing"
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Tarifs
+              Contact
             </Link>
             <Link
               href="#about"
@@ -29,10 +37,12 @@ export default function Navbar() {
             >
               À propos
             </Link>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <ShimmerButton className="px-4 py-2">Connexion</ShimmerButton>
+            <Link
+              href="#"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              F.A.Q
+            </Link>
           </div>
         </div>
       </nav>
