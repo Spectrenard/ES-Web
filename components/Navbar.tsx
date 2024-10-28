@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import LogoSvg from "@/assets/svg/logoipsum-287.svg";
@@ -18,12 +19,6 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden md:flex items-center gap-8 mx-auto">
-            <Link
-              href="#features"
-              className="text-gray-300 hover:text-white transition-colors"
-            >
-              Fonctionnalités
-            </Link>
             <Link
               href="#pricing"
               className="text-gray-300 hover:text-white transition-colors"

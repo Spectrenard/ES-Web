@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Particles from "@/components/ui/particles";
-import ShimmerButton from "@/components/ui/shimmer-button";
+import StarWarsButton from "@/components/ui/starsButton";
 import Image from "next/image";
 
 export default function Home() {
@@ -34,9 +34,7 @@ export default function Home() {
             </p>
 
             <div className="flex gap-6 justify-center">
-              <ShimmerButton variant="secondary" className="px-8 py-4">
-                Obtenir un devis gratuitement
-              </ShimmerButton>
+              <StarWarsButton text="Obtenir votre devis gratuitement" />
             </div>
           </div>
         </div>
