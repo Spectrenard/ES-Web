@@ -3,6 +3,7 @@
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 import { Bolt, BarChart3, Boxes, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 // Animation de code défilant pour Sites Web Performants
 const CodeAnimation = () => {
@@ -16,7 +17,7 @@ const CodeAnimation = () => {
           repeat: Infinity,
           ease: "linear",
         }}
-        className="text-sm font-mono text-blue-400/70 whitespace-pre"
+        className="text-sm font-mono text-gray-400/70 whitespace-pre"
       >
         {`
 const optimizePerformance = () => {
@@ -127,29 +128,29 @@ const DesignPatterns = () => {
 
 const items = [
   {
-    title: "Sites Web Performants",
+    title: "Performance Web",
     description:
-      "Développement de sites web rapides et optimisés pour une expérience utilisateur exceptionnelle.",
+      "Sites web ultra-rapides et optimisés pour une expérience fluide.",
     header: <CodeAnimation />,
     icon: <Bolt className="h-4 w-4 text-blue-500" />,
   },
   {
     title: "SEO & Analytics",
     description:
-      "Optimisation pour les moteurs de recherche et analyse détaillée des performances.",
+      "Visibilité maximale et suivi précis des performances de votre site.",
     header: <AnalyticsDashboard />,
     icon: <BarChart3 className="h-4 w-4 text-blue-500" />,
   },
   {
-    title: "Applications Sur Mesure",
-    description:
-      "Développement d'applications web personnalisées répondant à vos besoins.",
+    title: "Applications Web",
+    description: "Solutions sur mesure adaptées à vos besoins spécifiques.",
     header: <ModularInterface />,
     icon: <Boxes className="h-4 w-4 text-blue-500" />,
   },
   {
-    title: "Design Moderne",
-    description: "Création d'interfaces utilisateur élégantes et responsives.",
+    title: "Design UI/UX",
+    description:
+      "Interfaces modernes et intuitives qui captivent vos utilisateurs.",
     header: <DesignPatterns />,
     icon: <Sparkles className="h-4 w-4 text-blue-500" />,
   },
@@ -157,25 +158,47 @@ const items = [
 
 export default function Services() {
   return (
-    <div className="px-4 py-20">
-      <div className="flex items-center justify-center max-w-7xl mx-auto w-full gap-4 mb-16">
-        <div className="h-[1px] bg-gradient-to-r from-transparent via-gray-800 to-gray-400 flex-grow" />
-        <h2 className="text-3xl font-instrument text-white">Que fait-on ?</h2>
-        <div className="h-[1px] bg-gradient-to-l from-transparent via-gray-800 to-gray-400 flex-grow" />
+    <div className="relative w-full min-h-screen bg-black px-4 py-20 overflow-hidden">
+      {/* Effets de lumière minimalistes */}
+      <div className="absolute inset-0">
+        {/* Orbe principale subtile */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-blue-500/10 via-blue-500/5 to-transparent blur-[140px] rounded-[100%]" />
+
+        {/* Accent violet subtil */}
+        <div className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-purple-500/5 blur-[120px] rounded-full" />
       </div>
 
-      <BentoGrid className="max-w-4xl mx-auto">
-        {items.map((item, i) => (
-          <BentoGridItem
-            key={i}
-            title={item.title}
-            description={item.description}
-            header={item.header}
-            icon={item.icon}
-            className={i === 1 || i === 2 ? "md:col-span-2" : ""}
-          />
-        ))}
-      </BentoGrid>
+      {/* Contenu */}
+      <div className="relative z-10">
+        <div className="flex items-center justify-center max-w-7xl mx-auto w-full gap-4 mb-16">
+          <div className="h-[1px] bg-gradient-to-r from-transparent via-white/10 to-white/10 flex-grow" />
+          <h2 className="text-3xl font-instrument text-white/90">
+            Que fait-on ?
+          </h2>
+          <div className="h-[1px] bg-gradient-to-l from-transparent via-white/10 to-white/10 flex-grow" />
+        </div>
+
+        {/* Grid avec espacement optimisé */}
+        <BentoGrid className="max-w-4xl mx-auto">
+          {items.map((item, i) => (
+            <BentoGridItem
+              key={i}
+              title={item.title}
+              description={item.description}
+              header={item.header}
+              icon={item.icon}
+              className={cn(
+                // Classes de base
+                "transition-all duration-300",
+                // Classes spécifiques selon l'index
+                {
+                  "md:col-span-2": i === 1 || i === 2,
+                }
+              )}
+            />
+          ))}
+        </BentoGrid>
+      </div>
     </div>
   );
 }
