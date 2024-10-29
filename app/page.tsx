@@ -1,9 +1,8 @@
 import Navbar from "@/components/Navbar";
+import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import Particles from "@/components/ui/particles";
 import StarWarsButton from "@/components/ui/starsButton";
 import { CheckCircle, Clock, Award } from "lucide-react";
-
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -30,12 +29,12 @@ export default function Home() {
 
         <div className="max-w-4xl mx-auto text-center relative">
           <div className="py-40 space-y-6">
-            <div className="inline-block px-4 py-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full border border-blue-500/20">
-              <span className="text-blue-400">✨ Réponse en moins de 24h</span>
+            <div className="inline-block px-4 py-1 bg-white/5 rounded-full border border-white/10">
+              <AnimatedShinyText>✨ Réponse en moins de 24h</AnimatedShinyText>
             </div>
 
-            <h1 className="text-7xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 font-instrument">
-              Transformons vos idées en réalité
+            <h1 className="text-6xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 font-instrument">
+              Vos idées sont uniques, votre site devrait l'être aussi
             </h1>
 
             <p className="text-md text-gray-500 mb-12 mx-auto max-w-[750px]">
