@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Services from "@/components/Services";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import Particles from "@/components/ui/particles";
 import StarWarsButton from "@/components/ui/starsButton";
@@ -6,9 +7,9 @@ import { CheckCircle, Clock, Award } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="bg-black min-h-svh relative">
+    <div className="bg-black min-h-svh relative overflow-x-auto overflow-y-hidden">
       <Particles
-        className="absolute inset-0 z-20 pointer-events-none"
+        className="absolute inset-0 z-19 pointer-events-none"
         quantity={100}
         staticity={50}
         color="#4B5563"
@@ -62,50 +63,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="container mx-auto px-4 py-24 text-white">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">
-            Tout ce dont vous avez besoin
-          </h2>
-          <p className="text-gray-400">
-            Une suite complète d'outils pour votre réussite
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="p-8 rounded-2xl bg-gradient-to-b from-neutral-800 to-neutral-900 border border-white/10 hover:border-blue-500/50 transition-all duration-300">
-            <div className="h-12 w-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-6">
-              <span className="text-2xl">⚡️</span>
-            </div>
-            <h3 className="text-xl font-bold mb-3">Simple et rapide</h3>
-            <p className="text-gray-400">
-              Interface intuitive pour une prise en main immédiate. Commencez en
-              moins de 5 minutes.
-            </p>
-          </div>
-
-          <div className="p-8 rounded-2xl bg-gradient-to-b from-neutral-800 to-neutral-900 border border-white/10 hover:border-blue-500/50 transition-all duration-300">
-            <div className="h-12 w-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-6">
-              <span className="text-2xl">🔒</span>
-            </div>
-            <h3 className="text-xl font-bold mb-3">Hautement sécurisé</h3>
-            <p className="text-gray-400">
-              Protection de vos données avec les dernières technologies de
-              cryptage.
-            </p>
-          </div>
-
-          <div className="p-8 rounded-2xl bg-gradient-to-b from-neutral-800 to-neutral-900 border border-white/10 hover:border-blue-500/50 transition-all duration-300">
-            <div className="h-12 w-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-6">
-              <span className="text-2xl">🎯</span>
-            </div>
-            <h3 className="text-xl font-bold mb-3">Support 24/7</h3>
-            <p className="text-gray-400">
-              Une équipe d'experts à votre disposition pour vous accompagner.
-            </p>
-          </div>
-        </div>
-      </section>
+      <Services />
     </div>
   );
 }
