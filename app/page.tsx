@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="bg-gradient-to-b from-neutral-850 to-neutral-900 min-h-svh relative">
+    <div className="bg-black min-h-svh relative">
       <Particles
         className="absolute inset-0 z-20 pointer-events-none"
         quantity={100}
@@ -18,11 +18,19 @@ export default function Home() {
       <Navbar />
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-32 text-white relative z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-600/20 via-transparent to-transparent" />
+        {/* Effets de lumière complexes */}
+        <div className="absolute inset-0">
+          {/* Spotlights latéraux majeurs */}
+          <div className="absolute -left-1/4 top-0 w-[600px] h-[800px] bg-gradient-to-r from-blue-500/20 via-blue-600/15 to-transparent blur-[150px] rounded-full" />
+          <div className="absolute -right-1/4 top-0 w-[600px] h-[800px] bg-gradient-to-l from-blue-500/20 via-blue-600/15 to-transparent blur-[150px] rounded-full" />
+
+          {/* Orbe centrale principale */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/40 blur-[140px] rounded-full" />
+        </div>
 
         <div className="max-w-4xl mx-auto text-center relative">
           <div className="py-40 space-y-6">
-            <div className="inline-block mb-4 px-4 py-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full border border-blue-500/20">
+            <div className="inline-block px-4 py-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full border border-blue-500/20">
               <span className="text-blue-400">✨ Réponse en moins de 24h</span>
             </div>
 
