@@ -4,6 +4,7 @@ import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 import { Bolt, BarChart3, Boxes, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Particles from "./ui/particles";
 
 // Animation de code défilant pour Sites Web Performants
 const CodeAnimation = () => {
@@ -189,24 +190,30 @@ const items = [
 
 export default function Services() {
   return (
-    <div className="relative w-full min-h-screen bg-black px-4 py-20 overflow-hidden">
-      {/* Effets de lumière minimalistes */}
+    <div className="relative w-full min-h-screen bg-gradient-to-b from-black to-gray-900 px-4 py-20 overflow-hidden">
+      <Particles
+        className="absolute inset-0 z-19 pointer-events-none"
+        quantity={100}
+        staticity={50}
+        color="#4B5563"
+      />
+      {/* Effets de lumière améliorés */}
       <div className="absolute inset-0">
-        {/* Orbe principale subtile */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-blue-500/10 via-blue-500/5 to-transparent blur-[140px] rounded-[100%]" />
+        {/* Orbe principale plus lumineuse */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-blue-500/20 via-blue-500/10 to-transparent blur-[120px] rounded-[100%]" />
 
-        {/* Accent violet subtil */}
-        <div className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-purple-500/5 blur-[120px] rounded-full" />
+        {/* Accent violet plus visible */}
+        <div className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-purple-500/15 blur-[100px] rounded-full" />
       </div>
 
-      {/* Contenu */}
+      {/* Contenu avec titre plus visible */}
       <div className="relative z-10">
         <div className="flex items-center justify-center max-w-7xl mx-auto w-full gap-4 mb-16">
-          <div className="h-[1px] bg-gradient-to-r from-transparent via-white/10 to-white/10 flex-grow" />
-          <h2 className="text-3xl font-instrument text-white/90">
+          <div className="h-[1px] bg-gradient-to-r from-transparent via-white/20 to-white/20 flex-grow" />
+          <h2 className="text-4xl font-instrument text-white font-bold">
             Que fait-on ?
           </h2>
-          <div className="h-[1px] bg-gradient-to-l from-transparent via-white/10 to-white/10 flex-grow" />
+          <div className="h-[1px] bg-gradient-to-l from-transparent via-white/20 to-white/20 flex-grow" />
         </div>
 
         {/* Grid avec espacement optimisé */}
@@ -219,9 +226,7 @@ export default function Services() {
               header={item.header}
               icon={item.icon}
               className={cn(
-                // Classes de base
-                "transition-all duration-300",
-                // Classes spécifiques selon l'index
+                "transition-all duration-300 hover:scale-[1.02] hover:bg-white/5",
                 {
                   "md:col-span-2": i === 1 || i === 2,
                 }
