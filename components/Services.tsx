@@ -11,27 +11,60 @@ const CodeAnimation = () => {
     <div className="w-full h-full bg-[#0F0F10] rounded-xl overflow-hidden">
       <motion.div
         initial={{ y: 0 }}
-        animate={{ y: "-100%" }}
+        animate={{ y: "-50%" }}
         transition={{
-          duration: 10,
+          duration: 20,
           repeat: Infinity,
           ease: "linear",
+          repeatType: "loop",
         }}
-        className="text-sm font-mono text-gray-400/70 whitespace-pre"
+        className="text-sm font-mono text-gray-400/70 whitespace-pre leading-relaxed"
       >
         {`
-const optimizePerformance = () => {
-  // Optimisation du chargement
-  prefetch(assets);
-  lazyLoad(images);
+// Performance optimization
+const optimizeWebsite = async () => {
+  // Assets preloading
+  await preloadCriticalAssets();
+  lazyLoadImages();
   
-  // Mise en cache
-  enableCaching();
-  compressData();
+  // Core optimizations
+  minifyResources();
+  enableCompression();
+  setupCaching();
+  
+  // Performance metrics
+  measureLCP();
+  trackUserExperience();
+  optimizeForCore();
+}
 
-  // Performance monitoring
-  trackMetrics();
-  analyzeLCP();
+// Real-time monitoring
+const monitor = () => {
+  trackPerformance({
+    memory: true,
+    network: true,
+    rendering: true
+  });
+  
+  optimizeOnTheFly();
+  reportMetrics();
+}
+
+// Performance optimization
+const optimizeWebsite = async () => {
+  // Assets preloading
+  await preloadCriticalAssets();
+  lazyLoadImages();
+  
+  // Core optimizations
+  minifyResources();
+  enableCompression();
+  setupCaching();
+  
+  // Performance metrics
+  measureLCP();
+  trackUserExperience();
+  optimizeForCore();
 }
         `}
       </motion.div>
