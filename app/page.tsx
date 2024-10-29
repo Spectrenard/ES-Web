@@ -1,11 +1,13 @@
 import Navbar from "@/components/Navbar";
 import Particles from "@/components/ui/particles";
 import StarWarsButton from "@/components/ui/starsButton";
+import { CheckCircle, Clock, Award } from "lucide-react";
+
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="bg-gradient-to-b from-neutral-950 to-black min-h-svh relative">
+    <div className="bg-gradient-to-b from-neutral-850 to-neutral-900 min-h-svh relative">
       <Particles
         className="absolute inset-0 z-20 pointer-events-none"
         quantity={100}
@@ -16,26 +18,38 @@ export default function Home() {
       <Navbar />
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-32 text-white relative z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-600/20  via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-600/20 via-transparent to-transparent" />
 
         <div className="max-w-4xl mx-auto text-center relative">
-          <div className="py-40">
+          <div className="py-40 space-y-6">
             <div className="inline-block mb-4 px-4 py-1 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full border border-blue-500/20">
               <span className="text-blue-400">✨ Réponse en moins de 24h</span>
             </div>
 
-            <h1 className="text-7xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 font-instrument ">
+            <h1 className="text-7xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 font-instrument">
               Transformons vos idées en réalité
             </h1>
+
             <p className="text-md text-gray-500 mb-12 mx-auto max-w-[750px]">
               Explorez un univers de possibilités infinies et laissez-nous vous
               guider dans la création d'une présence en ligne qui reflète
               parfaitement l'essence et la vision de votre marque.
             </p>
 
-            <div className="flex gap-6 justify-center">
-              <StarWarsButton text="Obtenez votre devis gratuitement" />
+            {/* Section avec badge statistique ou label partenaires */}
+            <div className="flex justify-center items-center gap-2 text-gray-400 pt-8 pb-2">
+              <CheckCircle className="w-4 h-4" />
+              <span>10+ Projets Réalisés</span>
+              <span className="text-white/20">|</span>
+              <Clock className="w-4 h-4" />
+              <span>Support 24/7</span>
+              <span className="text-white/20">|</span>
+              <Award className="w-4 h-4" />
+              <span>Experts Certifiés</span>
             </div>
+
+            {/* CTA et Formulaire de devis */}
+            <StarWarsButton text="Obtenez votre devis gratuitement" />
           </div>
         </div>
       </section>
