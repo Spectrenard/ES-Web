@@ -37,7 +37,6 @@ const optimizeWebsite = async () => {
   trackUserExperience();
   optimizeForCore();
 }
-
 // Real-time monitoring
 const monitor = () => {
   trackPerformance({
@@ -49,7 +48,6 @@ const monitor = () => {
   optimizeOnTheFly();
   reportMetrics();
 }
-
 // Performance optimization
 const optimizeWebsite = async () => {
   // Assets preloading

@@ -7,7 +7,7 @@ import { CheckCircle, Clock, Award } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="bg-black min-h-svh relative overflow-x-auto overflow-y-hidden">
+    <div className="bg-black min-h-svh relative overflow-x-hidden">
       <Particles
         className="absolute inset-0 z-19 pointer-events-none"
         quantity={100}
@@ -19,7 +19,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-32 text-white relative z-10">
         {/* Effets de lumière complexes */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 ">
           {/* Spotlights latéraux majeurs */}
           <div className="absolute -left-1/4 top-0 w-[600px] h-[800px] bg-gradient-to-r from-blue-500/20 via-blue-600/15 to-transparent blur-[150px] rounded-full" />
           <div className="absolute -right-1/4 top-0 w-[600px] h-[800px] bg-gradient-to-l from-blue-500/20 via-blue-600/15 to-transparent blur-[150px] rounded-full" />
