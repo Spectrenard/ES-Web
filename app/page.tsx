@@ -8,6 +8,7 @@ import { CheckCircle, Clock, Award } from "lucide-react";
 import { motion } from "framer-motion";
 import Ripple from "@/components/ui/ripple";
 import Projects from "@/components/Projects";
+import Processus from "@/components/Processus";
 
 export default function Home() {
   return (
@@ -148,6 +149,9 @@ export default function Home() {
           />
         </div>
         <Projects />
+      </div>
+      <div>
+        <Processus />
       </div>
     </div>
   );

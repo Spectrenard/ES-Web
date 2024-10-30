@@ -4,11 +4,13 @@ import { Wand2 } from "lucide-react";
 interface StandaloneShineButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
+  icon?: React.ReactNode;
 }
 
 export const StandaloneShineButton = ({
   children,
   className,
+  icon,
   ...props
 }: StandaloneShineButtonProps) => {
   return (
@@ -46,7 +48,7 @@ export const StandaloneShineButton = ({
         {/* Shine effect */}
         <span
           className="absolute right-0 w-8 h-32 -mt-12 
-          transition-all duration-500 transform translate-x-12 
+          transition-all duration-700 transform translate-x-12 
           bg-white opacity-10 rotate-12 
           group-hover:-translate-x-96 ease
           dark:bg-slate-300" // Animation plus longue avec -translate-x-96
@@ -54,7 +56,11 @@ export const StandaloneShineButton = ({
 
         {/* Button content */}
         <span className="relative flex items-center gap-2 text-sm font-semibold tracking-wide">
-          <Wand2 className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+          {icon ? (
+            icon
+          ) : (
+            <Wand2 className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+          )}
           {children}
         </span>
       </button>
