@@ -22,7 +22,7 @@ export const StandaloneShineButton = ({
           "flex items-center gap-2",
 
           // Colors & Effects
-          "bg-slate-900/90 text-slate-50",
+          "bg-slate-900/10 text-slate-50",
           "hover:ring-2 hover:ring-offset-2 hover:ring-slate-800/40",
           "hover:bg-gradient-to-r hover:from-slate-800 hover:to-slate-700",
           "shadow-lg shadow-slate-900/20",

@@ -93,7 +93,7 @@ const AnalyticsDashboard = () => {
               transition={{ delay: i * 0.2 }}
             >
               <motion.div
-                className="h-full bg-orange-500 rounded-full"
+                className="h-full bg-orange-200 rounded-full"
                 initial={{ width: 0 }}
                 animate={{ width: `${metric.value}%` }}
                 transition={{ duration: 1, delay: i * 0.2 }}
@@ -111,7 +111,7 @@ const ModularInterface = () => {
   return (
     <div className="w-full h-full bg-slate-900 rounded-xl p-4">
       <div className="grid grid-cols-2 grid-rows-2 gap-2 h-full">
-        {["bg-slate-950", "bg-slate-800", "bg-orange-500", "bg-slate-300"].map(
+        {["bg-slate-950", "bg-slate-800", "bg-orange-200", "bg-slate-300"].map(
           (color, i) => (
             <motion.div
               key={i}
@@ -139,7 +139,7 @@ const DesignPatterns = () => {
         {[...Array(16)].map((_, i) => (
           <motion.div
             key={i}
-            className="rounded-md bg-gradient-to-br from-orange-500 to-slate-900"
+            className="rounded-md bg-gradient-to-br from-white to-slate-900"
             animate={{
               opacity: [0.3, 1, 0.3],
             }}
@@ -157,31 +157,31 @@ const DesignPatterns = () => {
 
 const items = [
   {
-    title: "Performance Web",
+    title: "Design UI/UX",
     description:
-      "Sites web ultra-rapides et optimisés pour une expérience fluide.",
-    header: <CodeAnimation />,
-    icon: <Bolt className="h-4 w-4 text-[#D4733E]" />,
+      "Interfaces modernes et intuitives qui captivent vos utilisateurs.",
+    header: <DesignPatterns />,
+    icon: <Sparkles className="h-4 w-4 text-orange-300" />,
+  },
+  {
+    title: "Applications Web",
+    description: "Solutions sur mesure adaptées à vos besoins spécifiques.",
+    header: <ModularInterface />,
+    icon: <Boxes className="h-4 w-4 text-orange-300" />,
   },
   {
     title: "SEO & Analytics",
     description:
       "Visibilité maximale et suivi précis des performances de votre site.",
     header: <AnalyticsDashboard />,
-    icon: <BarChart3 className="h-4 w-4 text-[#D4733E]" />,
+    icon: <BarChart3 className="h-4 w-4 text-orange-300" />,
   },
   {
-    title: "Applications Web",
-    description: "Solutions sur mesure adaptées à vos besoins spécifiques.",
-    header: <ModularInterface />,
-    icon: <Boxes className="h-4 w-4 text-[#D4733E]" />,
-  },
-  {
-    title: "Design UI/UX",
+    title: "Performance Web",
     description:
-      "Interfaces modernes et intuitives qui captivent vos utilisateurs.",
-    header: <DesignPatterns />,
-    icon: <Sparkles className="h-4 w-4 text-[#D4733E]" />,
+      "Sites web ultra-rapides et optimisés pour une expérience fluide.",
+    header: <CodeAnimation />,
+    icon: <Bolt className="h-4 w-4 text-orange-300" />,
   },
 ];
 
