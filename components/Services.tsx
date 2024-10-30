@@ -9,7 +9,7 @@ import Particles from "./ui/particles";
 // Animation de code défilant pour Sites Web Performants
 const CodeAnimation = () => {
   return (
-    <div className="w-full h-full bg-[#0F0F10] rounded-xl overflow-hidden">
+    <div className="w-full h-full bg-slate-900 rounded-xl overflow-hidden">
       <motion.div
         initial={{ y: 0 }}
         animate={{ y: "-50%" }}
@@ -19,7 +19,7 @@ const CodeAnimation = () => {
           ease: "linear",
           repeatType: "loop",
         }}
-        className="text-sm font-mono text-gray-400/70 whitespace-pre leading-relaxed"
+        className="text-sm font-mono text-slate-300 whitespace-pre leading-relaxed"
       >
         {`
 // Performance optimization
@@ -74,7 +74,7 @@ const optimizeWebsite = async () => {
 // Dashboard minimaliste pour SEO & Analytics
 const AnalyticsDashboard = () => {
   return (
-    <div className="w-full h-full bg-[#0F0F10] rounded-xl p-4">
+    <div className="w-full h-full bg-slate-900 rounded-xl p-4">
       <div className="space-y-3">
         {[
           { label: "Performance", value: 98 },
@@ -83,17 +83,17 @@ const AnalyticsDashboard = () => {
         ].map((metric, i) => (
           <div key={i} className="space-y-1">
             <div className="flex justify-between text-xs">
-              <span className="text-neutral-400">{metric.label}</span>
-              <span className="text-neutral-300">{metric.value}%</span>
+              <span className="text-slate-300">{metric.label}</span>
+              <span className="text-orange-300">{metric.value}%</span>
             </div>
             <motion.div
-              className="h-1 bg-[#1A1A1A] rounded-full overflow-hidden"
+              className="h-1 bg-slate-950 rounded-full overflow-hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: i * 0.2 }}
             >
               <motion.div
-                className="h-full bg-blue-500/40 rounded-full"
+                className="h-full bg-orange-500 rounded-full"
                 initial={{ width: 0 }}
                 animate={{ width: `${metric.value}%` }}
                 transition={{ duration: 1, delay: i * 0.2 }}
@@ -109,26 +109,23 @@ const AnalyticsDashboard = () => {
 // Interface modulaire pour Applications Sur Mesure
 const ModularInterface = () => {
   return (
-    <div className="w-full h-full bg-[#0F0F10] rounded-xl p-4">
+    <div className="w-full h-full bg-slate-900 rounded-xl p-4">
       <div className="grid grid-cols-2 grid-rows-2 gap-2 h-full">
-        {[
-          "bg-blue-500/20",
-          "bg-purple-500/20",
-          "bg-green-500/20",
-          "bg-yellow-500/20",
-        ].map((color, i) => (
-          <motion.div
-            key={i}
-            className={`rounded-lg ${color}`}
-            initial={{ scale: 0.5, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{
-              duration: 0.5,
-              delay: i * 0.1,
-              ease: "easeOut",
-            }}
-          />
-        ))}
+        {["bg-slate-950", "bg-slate-800", "bg-orange-500", "bg-slate-300"].map(
+          (color, i) => (
+            <motion.div
+              key={i}
+              className={`rounded-lg ${color}`}
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{
+                duration: 0.5,
+                delay: i * 0.1,
+                ease: "easeOut",
+              }}
+            />
+          )
+        )}
       </div>
     </div>
   );
@@ -137,12 +134,12 @@ const ModularInterface = () => {
 // Grille de design avec motifs
 const DesignPatterns = () => {
   return (
-    <div className="w-full h-full bg-[#0F0F10] rounded-xl p-4 overflow-hidden">
+    <div className="w-full h-full bg-slate-900 rounded-xl p-4 overflow-hidden">
       <div className="grid grid-cols-4 grid-rows-4 gap-1 h-full">
         {[...Array(16)].map((_, i) => (
           <motion.div
             key={i}
-            className="rounded-md bg-gradient-to-br from-blue-500/10 to-purple-500/10"
+            className="rounded-md bg-gradient-to-br from-orange-500 to-slate-900"
             animate={{
               opacity: [0.3, 1, 0.3],
             }}
@@ -164,59 +161,56 @@ const items = [
     description:
       "Sites web ultra-rapides et optimisés pour une expérience fluide.",
     header: <CodeAnimation />,
-    icon: <Bolt className="h-4 w-4 text-blue-500" />,
+    icon: <Bolt className="h-4 w-4 text-[#D4733E]" />,
   },
   {
     title: "SEO & Analytics",
     description:
       "Visibilité maximale et suivi précis des performances de votre site.",
     header: <AnalyticsDashboard />,
-    icon: <BarChart3 className="h-4 w-4 text-blue-500" />,
+    icon: <BarChart3 className="h-4 w-4 text-[#D4733E]" />,
   },
   {
     title: "Applications Web",
     description: "Solutions sur mesure adaptées à vos besoins spécifiques.",
     header: <ModularInterface />,
-    icon: <Boxes className="h-4 w-4 text-blue-500" />,
+    icon: <Boxes className="h-4 w-4 text-[#D4733E]" />,
   },
   {
     title: "Design UI/UX",
     description:
       "Interfaces modernes et intuitives qui captivent vos utilisateurs.",
     header: <DesignPatterns />,
-    icon: <Sparkles className="h-4 w-4 text-blue-500" />,
+    icon: <Sparkles className="h-4 w-4 text-[#D4733E]" />,
   },
 ];
 
 export default function Services() {
   return (
-    <div className="relative w-full min-h-screen bg-gradient-to-b from-black to-gray-900 px-4 py-20 overflow-hidden">
+    <div className="relative w-full min-h-screen bg-gradient-to-b from-neutral-950 to-neutral-900 px-4 py-20 overflow-hidden">
       <Particles
         className="absolute inset-0 z-19 pointer-events-none"
         quantity={100}
         staticity={50}
-        color="#4B5563"
+        color="#ffffff"
       />
-      {/* Effets de lumière améliorés */}
+      {/* Effets de lumière */}
       <div className="absolute inset-0">
-        {/* Orbe principale plus lumineuse */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-blue-500/20 via-blue-500/10 to-transparent blur-[120px] rounded-[100%]" />
+        <div className="absolute left-1/2 top-2/3 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-orange-300/40 via-orange-50/30 to-transparent blur-[90px] rounded-[100%]" />
 
-        {/* Accent violet plus visible */}
-        <div className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-purple-500/15 blur-[100px] rounded-full" />
+        <div className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-[#FFB88C]/30 blur-[100px] rounded-full" />
       </div>
 
-      {/* Contenu avec titre plus visible */}
+      {/* Contenu avec titre adapté */}
       <div className="relative z-10">
         <div className="flex items-center justify-center max-w-7xl mx-auto w-full gap-4 mb-16">
-          <div className="h-[1px] bg-gradient-to-r from-transparent via-white/20 to-white/20 flex-grow" />
-          <h2 className="text-4xl font-instrument text-white font-bold">
+          <div className="h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-gray-300 flex-grow" />
+          <h2 className="text-4xl font-instrument text-gray-90 font-bold">
             Que fait-on ?
           </h2>
-          <div className="h-[1px] bg-gradient-to-l from-transparent via-white/20 to-white/20 flex-grow" />
+          <div className="h-[1px] bg-gradient-to-l from-transparent via-gray-300 to-gray-300 flex-grow" />
         </div>
 
-        {/* Grid avec espacement optimisé */}
         <BentoGrid className="max-w-4xl mx-auto">
           {items.map((item, i) => (
             <BentoGridItem
@@ -226,7 +220,10 @@ export default function Services() {
               header={item.header}
               icon={item.icon}
               className={cn(
-                "transition-all duration-300 hover:scale-[1.02] hover:bg-white/5",
+                "transition-all duration-300 hover:scale-[1.02]",
+                "bg-[#1A1614]/40 backdrop-blur-sm border border-[#2D1810]",
+                "hover:bg-[#1A2B3C]/80 hover:border-[#89B4D6]/20 hover:shadow-lg",
+                "hover:shadow-[#D4733E]/5",
                 {
                   "md:col-span-2": i === 1 || i === 2,
                 }
