@@ -12,7 +12,10 @@ import Processus from "@/components/Processus";
 
 export default function Home() {
   return (
-    <div className="bg-gray-950 min-h-svh relative overflow-x-hidden">
+    <div
+      id="header"
+      className="bg-gray-950 min-h-svh relative overflow-x-hidden"
+    >
       <Particles
         className="absolute inset-0 z-19 pointer-events-none"
         quantity={100}
@@ -114,7 +117,7 @@ export default function Home() {
         </div>
       </section>
       {/* Section Services avec ses spotlights */}
-      <div className="relative">
+      <div id="services" className="relative">
         <div className="absolute inset-0">
           <div
             className="absolute left-1/2 -translate-x-1/2 top-48
@@ -133,7 +136,7 @@ export default function Home() {
       </div>
 
       {/* Section Projects avec ses spotlights */}
-      <div className="relative">
+      <div id="projects" className="relative">
         <div className="absolute inset-0">
           <div
             className="absolute left-1/2 -translate-x-1/2 top-90
@@ -150,7 +153,7 @@ export default function Home() {
         </div>
         <Projects />
       </div>
-      <div>
+      <div id="processus" className="relative">
         <Processus />
       </div>
     </div>

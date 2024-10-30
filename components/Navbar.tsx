@@ -4,12 +4,25 @@ import Image from "next/image";
 import LogoSvg from "@/public/assets/svg/logoipsum-287.svg";
 
 export default function Navbar() {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <div className="fixed top-4 left-1/2 -translate-x-1/2 w-[40%] max-w-7xl z-50">
       <nav className="w-full px-6 py-4 backdrop-blur-md bg-gray-900/45 border border-white/10 rounded-full">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="text-white">
+          <button
+            onClick={() => scrollToSection("header")}
+            className="text-white"
+          >
             <Image
               src={LogoSvg}
               alt="ES Web Logo"
@@ -17,28 +30,28 @@ export default function Navbar() {
               height={40}
               className="w-auto h-8"
             />
-          </Link>
+          </button>
 
           {/* Liens centrés */}
           <div className="flex-1 hidden md:flex justify-center items-center gap-8">
-            <Link
-              href="#pricing"
-              className="text-gray-100 hover:text-white transition-colors"
+            <button
+              onClick={() => scrollToSection("services")}
+              className="text-gray-100 hover:text-white transition-colors cursor-pointer"
             >
-              Contact
-            </Link>
-            <Link
-              href="#about"
-              className="text-gray-100 hover:text-white transition-colors"
+              Services
+            </button>
+            <button
+              onClick={() => scrollToSection("projects")}
+              className="text-gray-100 hover:text-white transition-colors cursor-pointer"
             >
-              À propos
-            </Link>
-            <Link
-              href="#faq"
-              className="text-gray-100 hover:text-white transition-colors"
+              Projets
+            </button>
+            <button
+              onClick={() => scrollToSection("processus")}
+              className="text-gray-100 hover:text-white transition-colors cursor-pointer"
             >
-              F.A.Q
-            </Link>
+              Processus
+            </button>
           </div>
 
           {/* Espace pour équilibrer la flexbox */}
