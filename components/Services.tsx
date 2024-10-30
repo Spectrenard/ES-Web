@@ -5,14 +5,22 @@ import { Bolt, BarChart3, Boxes, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Particles from "./ui/particles";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 // Animation de code défilant pour Sites Web Performants
 const CodeAnimation = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+
   return (
-    <div className="w-full h-full bg-slate-900 rounded-xl overflow-hidden">
+    <div
+      ref={ref}
+      className="w-full h-full bg-slate-900 rounded-xl overflow-hidden"
+    >
       <motion.div
         initial={{ y: 0 }}
-        animate={{ y: "-50%" }}
+        animate={isInView ? { y: "-50%" } : { y: 0 }}
         transition={{
           duration: 20,
           repeat: Infinity,
@@ -73,8 +81,11 @@ const optimizeWebsite = async () => {
 
 // Dashboard minimaliste pour SEO & Analytics
 const AnalyticsDashboard = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+
   return (
-    <div className="w-full h-full bg-slate-900 rounded-xl p-4">
+    <div ref={ref} className="w-full h-full bg-slate-900 rounded-xl p-4">
       <div className="space-y-3">
         {[
           { label: "Performance", value: 98 },
@@ -89,7 +100,7 @@ const AnalyticsDashboard = () => {
             <motion.div
               className="h-1 bg-slate-950 rounded-full overflow-hidden"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ delay: i * 0.2 }}
             >
               <motion.div
@@ -108,8 +119,11 @@ const AnalyticsDashboard = () => {
 
 // Interface modulaire pour Applications Sur Mesure
 const ModularInterface = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+
   return (
-    <div className="w-full h-full bg-slate-900 rounded-xl p-4">
+    <div ref={ref} className="w-full h-full bg-slate-900 rounded-xl p-4">
       <div className="grid grid-cols-2 grid-rows-2 gap-2 h-full">
         {["bg-slate-950", "bg-slate-800", "bg-orange-200", "bg-slate-300"].map(
           (color, i) => (
@@ -117,7 +131,9 @@ const ModularInterface = () => {
               key={i}
               className={`rounded-lg ${color}`}
               initial={{ scale: 0.5, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
+              animate={
+                isInView ? { scale: 1, opacity: 1 } : { scale: 0.5, opacity: 0 }
+              }
               transition={{
                 duration: 0.5,
                 delay: i * 0.1,
@@ -133,16 +149,26 @@ const ModularInterface = () => {
 
 // Grille de design avec motifs
 const DesignPatterns = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+
   return (
-    <div className="w-full h-full bg-slate-900 rounded-xl p-4 overflow-hidden">
+    <div
+      ref={ref}
+      className="w-full h-full bg-slate-900 rounded-xl p-4 overflow-hidden"
+    >
       <div className="grid grid-cols-4 grid-rows-4 gap-1 h-full">
         {[...Array(16)].map((_, i) => (
           <motion.div
             key={i}
             className="rounded-md bg-gradient-to-br from-white to-slate-900"
-            animate={{
-              opacity: [0.3, 1, 0.3],
-            }}
+            animate={
+              isInView
+                ? {
+                    opacity: [0.3, 1, 0.3],
+                  }
+                : { opacity: 0.3 }
+            }
             transition={{
               duration: 2,
               delay: i * 0.1,

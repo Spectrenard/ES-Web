@@ -1,9 +1,11 @@
+"use client";
 import Navbar from "@/components/Navbar";
 import Services from "@/components/Services";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { StandaloneShineButton } from "@/components/ui/cta";
 import Particles from "@/components/ui/particles";
 import { CheckCircle, Clock, Award } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -32,22 +34,42 @@ export default function Home() {
         </div>
 
         <div className="max-w-4xl mx-auto text-center relative">
-          <div className="py-40 space-y-6 ">
-            <div className="inline-block px-4 py-1 bg-white/5 rounded-full border border-white/10">
+          <div className="py-40 space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-block px-4 py-1 bg-white/5 rounded-full border border-white/10"
+            >
               <AnimatedShinyText>✨ Réponse en moins de 24h</AnimatedShinyText>
-            </div>
+            </motion.div>
 
-            <h1 className="text-7xl font-semibold mb-6 text-stone-100 font-instrument drop-shadow-[0_0_0.2rem_#ffffff70]">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-7xl font-semibold mb-6 text-stone-100 font-instrument drop-shadow-[0_0_0.2rem_#ffffff70]"
+            >
               Votre <span className="text-orange-300/90">projet</span> a du
               cœur, notre code lui donne vie
-            </h1>
+            </motion.h1>
 
-            <p className="text-md text-stone-400 mb-12 mx-auto max-w-[750px]">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-md text-stone-400 mb-12 mx-auto max-w-[750px]"
+            >
               Transformons vos idées en une vitrine digitale qui attire, inspire
               et engage.
-            </p>
+            </motion.p>
 
-            <div className="flex justify-center items-center gap-2 text-stone-500 pt-8 pb-2">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="flex justify-center items-center gap-2 text-stone-500 pt-8 pb-2"
+            >
               <CheckCircle className="w-4 h-4" />
               <span className="text-stone-400">10+ Projets Réalisés</span>
               <span className="text-stone-600">|</span>
@@ -56,11 +78,22 @@ export default function Home() {
               <span className="text-stone-600">|</span>
               <Award className="w-4 h-4" />
               <span className="text-stone-400">Experts Certifiés</span>
-            </div>
+            </motion.div>
 
-            <StandaloneShineButton>
-              Obtenez votre devis gratuitement
-            </StandaloneShineButton>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.5,
+                delay: 0.8,
+                type: "spring",
+                stiffness: 200,
+              }}
+            >
+              <StandaloneShineButton>
+                Obtenez votre devis gratuitement
+              </StandaloneShineButton>
+            </motion.div>
           </div>
         </div>
       </section>
