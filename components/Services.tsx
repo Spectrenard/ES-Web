@@ -95,7 +95,7 @@ const AnalyticsDashboard = () => {
           <div key={i} className="space-y-1">
             <div className="flex justify-between text-xs">
               <span className="text-slate-300">{metric.label}</span>
-              <span className="text-orange-300">{metric.value}%</span>
+              <span className="text-purple-300">{metric.value}%</span>
             </div>
             <motion.div
               className="h-1 bg-slate-950 rounded-full overflow-hidden"
@@ -104,7 +104,7 @@ const AnalyticsDashboard = () => {
               transition={{ delay: i * 0.2 }}
             >
               <motion.div
-                className="h-full bg-orange-200 rounded-full"
+                className="h-full bg-purple-200 rounded-full"
                 initial={{ width: 0 }}
                 animate={{ width: `${metric.value}%` }}
                 transition={{ duration: 1, delay: i * 0.2 }}
@@ -125,7 +125,7 @@ const ModularInterface = () => {
   return (
     <div ref={ref} className="w-full h-full bg-slate-900 rounded-xl p-4">
       <div className="grid grid-cols-2 grid-rows-2 gap-2 h-full">
-        {["bg-slate-950", "bg-slate-800", "bg-orange-200", "bg-slate-300"].map(
+        {["bg-slate-950", "bg-slate-800", "bg-purple-200", "bg-slate-300"].map(
           (color, i) => (
             <motion.div
               key={i}
@@ -187,33 +187,33 @@ const items = [
     description:
       "Interfaces modernes et intuitives qui captivent vos utilisateurs.",
     header: <DesignPatterns />,
-    icon: <Sparkles className="h-4 w-4 text-orange-300" />,
+    icon: <Sparkles className="h-4 w-4 text-purple-300" />,
   },
   {
     title: "Applications Web",
     description: "Solutions sur mesure adaptées à vos besoins spécifiques.",
     header: <ModularInterface />,
-    icon: <Boxes className="h-4 w-4 text-orange-300" />,
+    icon: <Boxes className="h-4 w-4 text-purple-300" />,
   },
   {
     title: "SEO & Analytics",
     description:
       "Visibilité maximale et suivi précis des performances de votre site.",
     header: <AnalyticsDashboard />,
-    icon: <BarChart3 className="h-4 w-4 text-orange-300" />,
+    icon: <BarChart3 className="h-4 w-4 text-purple-300" />,
   },
   {
     title: "Performance Web",
     description:
       "Sites web ultra-rapides et optimisés pour une expérience fluide.",
     header: <CodeAnimation />,
-    icon: <Bolt className="h-4 w-4 text-orange-300" />,
+    icon: <Bolt className="h-4 w-4 text-purple-300" />,
   },
 ];
 
 export default function Services() {
   return (
-    <div className="relative w-full min-h-screen bg-gradient-to-b from-neutral-950 to-neutral-900 px-4 py-20 overflow-hidden">
+    <div className="relative w-full min-h-screen  px-4 py-20 overflow-hidden">
       <Particles
         className="absolute inset-0 z-19 pointer-events-none"
         quantity={100}
@@ -222,9 +222,9 @@ export default function Services() {
       />
       {/* Effets de lumière */}
       <div className="absolute inset-0">
-        <div className="absolute left-1/2 top-2/3 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-orange-300/40 via-orange-50/30 to-transparent blur-[90px] rounded-[100%]" />
+        <div className="absolute left-1/2 top-2/3 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-purple-300/40 via-purple-50/30 to-transparent blur-[90px] rounded-[100%]" />
 
-        <div className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-[#FFB88C]/30 blur-[100px] rounded-full" />
+        <div className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-purple-400/30 blur-[100px] rounded-full" />
       </div>
 
       {/* Contenu avec titre adapté */}
@@ -247,9 +247,9 @@ export default function Services() {
               icon={item.icon}
               className={cn(
                 "transition-all duration-300 hover:scale-[1.02]",
-                "bg-[#1A1614]/40 backdrop-blur-sm border border-[#2D1810]",
-                "hover:bg-[#1A2B3C]/80 hover:border-[#89B4D6]/20 hover:shadow-lg",
-                "hover:shadow-[#D4733E]/5",
+                "bg-[#1A1614]/40 backdrop-blur-sm border ",
+                "hover:bg-[#1A2B3C]/80 hover:border-purple-400/20 hover:shadow-lg",
+                "hover:shadow-purple-500/5",
                 {
                   "md:col-span-2": i === 1 || i === 2,
                 }
