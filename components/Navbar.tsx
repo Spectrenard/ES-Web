@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import LogoSvg from "@/assets/svg/logoipsum-287.svg";
+import LogoSvg from "@/public/assets/svg/logoipsum-287.svg";
 
 export default function Navbar() {
   return (

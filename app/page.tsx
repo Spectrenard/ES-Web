@@ -7,6 +7,7 @@ import Particles from "@/components/ui/particles";
 import { CheckCircle, Clock, Award } from "lucide-react";
 import { motion } from "framer-motion";
 import Ripple from "@/components/ui/ripple";
+import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
@@ -111,8 +112,43 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Section Services avec ses spotlights */}
+      <div className="relative">
+        <div className="absolute inset-0">
+          <div
+            className="absolute left-1/2 -translate-x-1/2 top-48
+            w-[1200px] h-[600px] 
+            bg-gradient-to-b from-purple-300/40 via-purple-50/30 to-transparent 
+            blur-[90px] rounded-[100%]"
+          />
+          <div
+            className="absolute right-0 top-96
+            w-[500px] h-[500px] 
+            bg-gradient-to-l from-violet-600/20 via-purple-400/30 to-transparent 
+            blur-[130px] rounded-full"
+          />
+        </div>
+        <Services />
+      </div>
 
-      <Services />
+      {/* Section Projects avec ses spotlights */}
+      <div className="relative">
+        <div className="absolute inset-0">
+          <div
+            className="absolute left-1/2 -translate-x-1/2 top-90
+            w-[1200px] h-[800px] 
+            bg-gradient-to-b from-purple-400/30 via-purple-200/20 to-transparent 
+            blur-[100px] rounded-[100%]"
+          />
+          <div
+            className="absolute left-0 top-40
+            w-[600px] h-[600px] 
+            bg-gradient-to-r from-indigo-500/20 via-purple-400/30 to-transparent 
+            blur-[130px] rounded-full"
+          />
+        </div>
+        <Projects />
+      </div>
     </div>
   );
 }

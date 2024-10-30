@@ -15,8 +15,8 @@ export default function NotFound() {
 
       {/* Effets de lumière adaptés */}
       <div className="absolute inset-0">
-        <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-orange-300/30 via-orange-200/40 to-orange-300/30 blur-[130px] rounded-full" />
-        <div className="absolute right-1/4 top-2/3 w-[400px] h-[300px] bg-gradient-to-bl from-orange-400/30 via-orange-300/40 to-transparent blur-[100px] rounded-full" />
+        <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-purple-400/30 via-purple-300/40 to-purple-400/30 blur-[130px] rounded-full" />
+        <div className="absolute right-1/4 top-2/3 w-[400px] h-[300px] bg-gradient-to-bl from-purple-500/30 via-purple-400/40 to-transparent blur-[100px] rounded-full" />
       </div>
 
       <div className="container mx-auto px-4 h-svh flex flex-col items-center justify-center relative z-10">

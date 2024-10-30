@@ -213,19 +213,13 @@ const items = [
 
 export default function Services() {
   return (
-    <div className="relative w-full min-h-screen  px-4 py-20 overflow-hidden">
+    <div className="relative w-full min-h-screen px-4 py-20 overflow-hidden">
       <Particles
         className="absolute inset-0 z-19 pointer-events-none"
         quantity={100}
         staticity={50}
         color="#ffffff"
       />
-      {/* Effets de lumière */}
-      <div className="absolute inset-0">
-        <div className="absolute left-1/2 top-2/3 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-purple-300/40 via-purple-50/30 to-transparent blur-[90px] rounded-[100%]" />
-
-        <div className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-purple-400/30 blur-[100px] rounded-full" />
-      </div>
 
       {/* Contenu avec titre adapté */}
       <div className="relative z-10">
