@@ -11,6 +11,7 @@ import Projects from "@/components/Projects";
 import Processus from "@/components/Processus";
 import Faq from "@/components/Faq";
 import Reviews from "@/components/Reviews";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -161,8 +162,51 @@ export default function Home() {
       <div>
         <Reviews />
       </div>
-      <div id="faq">
-        <Faq />
+      {/* Section FAQ avec ses spotlights */}
+      <div id="faq" className="relative bg-gray-950">
+        <div className="absolute inset-0 z-0">
+          {/* Spotlight principal - grand et centré */}
+          <div
+            className="absolute left-1/2 -translate-x-1/2 top-1/4
+            w-[1200px] h-[800px]
+            bg-gradient-to-b from-purple-400/20 via-purple-300/10 to-transparent 
+            blur-[130px] rounded-[60%]"
+          />
+
+          {/* Spotlight secondaire - accent latéral */}
+          <div
+            className="absolute -right-20 top-1/3
+            w-[500px] h-[800px] rotate-[15deg]
+            bg-gradient-to-l from-indigo-500/20 via-purple-400/15 to-transparent 
+            blur-[130px]"
+          />
+        </div>
+        <div className="relative z-10">
+          <Faq />
+        </div>
+      </div>
+      {/* Section Contact avec ses spotlights */}
+      <div id="contact" className="relative -mt-1">
+        <div className="absolute inset-0 z-0">
+          {/* Spotlight principal - forme organique */}
+          <div
+            className="absolute left-1/2 -translate-x-1/2 top-20
+            w-[900px] h-[700px]
+            bg-gradient-to-b from-purple-500/25 via-purple-400/15 to-transparent 
+            blur-[120px]"
+          />
+
+          {/* Spotlight accent */}
+          <div
+            className="absolute -left-20 bottom-0
+            w-[500px] h-[500px] rotate-12
+            bg-gradient-to-r from-indigo-500/20 via-slate-400/20 to-transparent 
+            blur-[100px]"
+          />
+        </div>
+        <div className="relative z-10">
+          <Contact />
+        </div>
       </div>
     </div>
   );

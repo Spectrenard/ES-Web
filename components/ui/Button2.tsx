@@ -5,7 +5,7 @@ interface Button2Props {
 export default function Button2({ text }: Button2Props) {
   return (
     <button
-      className="relative inline-flex items-center gap-2 px-10 py-2.5 
+      className="relative text-sm inline-flex items-center gap-2 px-10 py-2.5 
       font-medium text-white/90 
       bg-white/5 rounded-full
       ring-2 ring-white/10 

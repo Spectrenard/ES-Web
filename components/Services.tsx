@@ -123,26 +123,17 @@ const ModularInterface = () => {
   const isInView = useInView(ref, { once: false });
 
   return (
-    <div ref={ref} className="w-full h-full bg-slate-900 rounded-xl p-4">
-      <div className="grid grid-cols-2 grid-rows-2 gap-2 h-full">
-        {["bg-slate-950", "bg-slate-800", "bg-purple-200", "bg-slate-300"].map(
-          (color, i) => (
-            <motion.div
-              key={i}
-              className={`rounded-lg ${color}`}
-              initial={{ scale: 0.5, opacity: 0 }}
-              animate={
-                isInView ? { scale: 1, opacity: 1 } : { scale: 0.5, opacity: 0 }
-              }
-              transition={{
-                duration: 0.5,
-                delay: i * 0.1,
-                ease: "easeOut",
-              }}
-            />
-          )
-        )}
-      </div>
+    <div ref={ref} className="w-full h-[150px] bg-slate-900 rounded-xl p-4">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-full object-cover rounded-lg"
+      >
+        <source src="/videos/app-demo.mp4" type="video/mp4" />
+        Votre navigateur ne supporte pas la lecture de vidéos.
+      </video>
     </div>
   );
 };

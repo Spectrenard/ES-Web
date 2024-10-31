@@ -65,8 +65,11 @@ export default function Navbar() {
           </div>
 
           {/* Bouton avec largeur fixe */}
-          <div className="w-[180px] flex justify-end">
-            <Button2 text="Contact" />
+          <div
+            onClick={() => scrollToSection("contact")}
+            className="flex justify-end"
+          >
+            <Button2 text="Contactez-nous" />
           </div>
         </div>
       </nav>

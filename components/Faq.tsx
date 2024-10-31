@@ -5,16 +5,6 @@ import AnimatedShinyText from "./ui/animated-shiny-text";
 export default function Faq() {
   return (
     <section className="container mx-auto px-4 py-32 relative">
-      {/* Spotlight pour la section FAQ */}
-      <div className="absolute inset-0">
-        <div
-          className="absolute left-1/2 -translate-x-1/2 top-1/4
-          w-[900px] h-[500px] 
-          bg-gradient-to-b from-purple-500/20 via-purple-300/15 to-transparent 
-          blur-[120px] rounded-full"
-        />
-      </div>
-
       <div className="max-w-4xl mx-auto relative">
         {/* En-tête de la section */}
         <div className="text-center mb-8 space-y-4">
