@@ -85,55 +85,135 @@ const AnalyticsDashboard = () => {
   const isInView = useInView(ref, { once: false });
 
   return (
-    <div ref={ref} className="w-full h-full bg-slate-900 rounded-xl p-4">
-      <div className="space-y-3">
-        {[
-          { label: "Performance", value: 98 },
-          { label: "SEO", value: 94 },
-          { label: "Accessibilité", value: 100 },
-        ].map((metric, i) => (
-          <div key={i} className="space-y-1">
-            <div className="flex justify-between text-xs">
-              <span className="text-slate-300">{metric.label}</span>
-              <span className="text-purple-300">{metric.value}%</span>
-            </div>
+    <div ref={ref} className="w-full h-[150px] bg-slate-900 rounded-xl p-3">
+      <div className="flex flex-col h-full">
+        {/* En-tête */}
+        <div className="flex justify-between items-center mb-2">
+          <span className="text-xs text-slate-300">Analytics Overview</span>
+          <motion.div
+            className="h-1.5 w-1.5 rounded-full bg-green-400"
+            animate={{ opacity: [1, 0.4, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
+        </div>
+
+        {/* Statistiques principales */}
+        <div className="grid grid-cols-2 gap-2 mb-2">
+          {[
+            { label: "Visiteurs", value: "2.4k", trend: "+12%" },
+            { label: "Temps moyen", value: "3:45", trend: "+8%" },
+          ].map((stat, i) => (
             <motion.div
-              className="h-1 bg-slate-950 rounded-full overflow-hidden"
-              initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+              key={i}
+              className="bg-slate-800/50 rounded-lg p-2"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: i * 0.2 }}
             >
-              <motion.div
-                className="h-full bg-purple-200 rounded-full"
-                initial={{ width: 0 }}
-                animate={{ width: `${metric.value}%` }}
-                transition={{ duration: 1, delay: i * 0.2 }}
-              />
+              <div className="text-xs text-slate-400">{stat.label}</div>
+              <div className="flex items-center gap-1">
+                <span className="text-sm font-semibold text-slate-200">
+                  {stat.value}
+                </span>
+                <span className="text-xs text-green-400">{stat.trend}</span>
+              </div>
             </motion.div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        {/* Graphique simplifié */}
+        <div className="flex items-end gap-1 h-14 mt-auto">
+          {[40, 70, 55, 90, 60, 75, 85].map((height, i) => (
+            <motion.div
+              key={i}
+              className="flex-1 bg-purple-400/20 rounded-t"
+              initial={{ height: 0 }}
+              animate={
+                isInView
+                  ? {
+                      height: `${height}%`,
+                      backgroundColor:
+                        i === 6
+                          ? "rgb(192, 132, 252, 0.5)"
+                          : "rgb(192, 132, 252, 0.2)",
+                    }
+                  : { height: 0 }
+              }
+              transition={{
+                delay: i * 0.1,
+                duration: 0.5,
+                ease: "backOut",
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Labels du graphique */}
+        <div className="flex justify-between mt-1">
+          {["L", "M", "M", "J", "V", "S", "D"].map((day, i) => (
+            <motion.span
+              key={i}
+              className="text-[9px] text-slate-400"
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ delay: 0.8 + i * 0.1 }}
+            >
+              {day}
+            </motion.span>
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
-// Interface modulaire pour Applications Sur Mesure
-const ModularInterface = () => {
+// Nouvelle animation pour Applications Web
+const WebAppAnimation = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
 
   return (
     <div ref={ref} className="w-full h-[150px] bg-slate-900 rounded-xl p-4">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="w-full h-full object-cover rounded-lg"
-      >
-        <source src="/videos/app-demo.mp4" type="video/mp4" />
-        Votre navigateur ne supporte pas la lecture de vidéos.
-      </video>
+      <div className="relative h-full">
+        {/* Fenêtre principale */}
+        <motion.div
+          className="absolute inset-0 border border-purple-400/20 rounded-lg"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+        >
+          {/* Barre de navigation simulée */}
+          <div className="h-4 bg-purple-400/10 rounded-t-lg flex items-center px-2 gap-1">
+            {[...Array(3)].map((_, i) => (
+              <div key={i} className="w-1 h-1 rounded-full bg-purple-300/40" />
+            ))}
+          </div>
+
+          {/* Éléments animés */}
+          <div className="p-2 grid grid-cols-2 gap-2">
+            {[...Array(4)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="h-[30px] bg-purple-400/10 rounded"
+                initial={{ x: -20, opacity: 0 }}
+                animate={
+                  isInView
+                    ? {
+                        x: 0,
+                        opacity: [0.3, 1, 0.3],
+                      }
+                    : { x: -20, opacity: 0 }
+                }
+                transition={{
+                  duration: 2,
+                  delay: i * 0.2,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              />
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 };
@@ -183,7 +263,7 @@ const items = [
   {
     title: "Applications Web",
     description: "Solutions sur mesure adaptées à vos besoins spécifiques.",
-    header: <ModularInterface />,
+    header: <WebAppAnimation />,
     icon: <Boxes className="h-4 w-4 text-purple-300" />,
   },
   {

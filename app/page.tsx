@@ -19,7 +19,7 @@ export default function Home() {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({
-        behavior: "auto",
+        behavior: "smooth",
         block: "start",
       });
     }

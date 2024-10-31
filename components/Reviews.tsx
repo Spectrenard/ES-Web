@@ -1,5 +1,6 @@
 import Marquee from "./ui/marquee";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const reviews = [
   {
@@ -67,7 +68,10 @@ export default function Reviews() {
 
       <div className="container mx-auto px-4 relative">
         <div className="max-w-4xl mx-auto text-center mb-20">
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 
             bg-gradient-to-r from-purple-500/10 to-purple-500/20 
             rounded-full border border-purple-500/20"
@@ -76,17 +80,23 @@ export default function Reviews() {
             <span className="text-purple-400 text-sm font-medium">
               Avis vérifiés Google
             </span>
-          </div>
+          </motion.div>
 
-          <h2
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="text-5xl font-semibold mb-8 
             bg-gradient-to-r from-white via-white to-purple-200 
             bg-clip-text text-transparent"
           >
             La voix de nos clients
-          </h2>
+          </motion.h2>
 
-          <div
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             className="flex justify-between items-center max-w-xl mx-auto mb-12 
             p-4 rounded-2xl bg-white/5 border border-white/10"
           >
@@ -112,13 +122,18 @@ export default function Reviews() {
               <div className="text-2xl font-bold text-purple-400">100%</div>
               <div className="text-stone-400 text-sm">de satisfaction</div>
             </div>
-          </div>
+          </motion.div>
 
-          <p className="text-stone-400 text-lg leading-relaxed max-w-2xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-stone-400 text-lg leading-relaxed max-w-2xl mx-auto"
+          >
             Des retours authentiques de clients qui témoignent de leur
             expérience avec notre agence. Chaque avis reflète notre engagement
             envers l'excellence et la satisfaction client.
-          </p>
+          </motion.p>
         </div>
 
         <div>

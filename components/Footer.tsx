@@ -42,7 +42,7 @@ export default function Footer() {
             <span>© {currentYear}</span>
             <span className="text-stone-400">Made by</span>
             <a
-              href="https://github.com/Spectrenard"
+              href="https://elyesasahin.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-purple-400 hover:text-purple-300 transition-colors"
