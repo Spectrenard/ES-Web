@@ -56,6 +56,12 @@ export default function Navbar() {
             >
               Processus
             </button>
+            <button
+              onClick={() => scrollToSection("faq")}
+              className="text-gray-100 hover:text-white transition-colors cursor-pointer"
+            >
+              F.A.Q
+            </button>
           </div>
 
           {/* Bouton avec largeur fixe */}
