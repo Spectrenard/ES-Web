@@ -12,22 +12,20 @@ import Processus from "@/components/Processus";
 import Faq from "@/components/Faq";
 import Reviews from "@/components/Reviews";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({
-        behavior: "smooth",
+        behavior: "auto",
         block: "start",
       });
     }
   };
   return (
-    <div
-      id="header"
-      className="bg-gray-950 min-h-svh relative overflow-x-hidden"
-    >
+    <div id="header" className="bg-gray-950 min-h-svh relative ">
       <Particles
         className="absolute inset-0 z-19 pointer-events-none"
         quantity={100}
@@ -72,17 +70,19 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="inline-block px-4 py-1 bg-white/5 rounded-full border border-white/10"
             >
-              <AnimatedShinyText>✨ Réponse en moins de 24h</AnimatedShinyText>
+              <AnimatedShinyText>✨ Réponse en 24h</AnimatedShinyText>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-7xl font-semibold mb-6 text-stone-100 font-instrument d"
+              transition={{ duration: 0.5 }} // Réduit la durée
+              className="text-6xl font-semibold mb-6 text-stone-100 font-instrument"
             >
-              Votre <span className="text-purple-400/90">projet</span> a du
-              cœur, notre code lui donne vie
+              Un site web sur mesure, une{" "}
+              <span className="text-purple-400/90">présence </span>
+              qui inspire
+              <span className="text-purple-400/90"> confiance</span>
             </motion.h1>
 
             <motion.p
@@ -91,8 +91,8 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-md text-stone-400 mb-12 mx-auto max-w-[750px]"
             >
-              Transformons vos idées en une vitrine digitale qui attire, inspire
-              et engage.
+              De la conception à la mise en ligne, nous développons des sites
+              web modernes et performants qui correspondent à vos objectifs.
             </motion.p>
 
             <motion.div
@@ -102,13 +102,13 @@ export default function Home() {
               className="flex justify-center items-center gap-2 text-stone-500 pt-8 pb-2"
             >
               <CheckCircle className="w-4 h-4 text-purple-300" />
-              <span className="text-stone-400">10+ Projets Réalisés</span>
+              <span className="text-stone-400">Sites Web Sur Mesure</span>
               <span className="text-stone-600">|</span>
               <Clock className="w-4 h-4 text-purple-300" />
               <span className="text-stone-400">Support 24/7</span>
               <span className="text-stone-600">|</span>
               <Award className="w-4 h-4 text-purple-300" />
-              <span className="text-stone-400">Experts Certifiés</span>
+              <span className="text-stone-400">Développeurs Certifiés</span>
             </motion.div>
 
             <motion.div
@@ -216,6 +216,7 @@ export default function Home() {
         <div className="relative z-10">
           <Contact />
         </div>
+        <Footer />
       </div>
     </div>
   );
