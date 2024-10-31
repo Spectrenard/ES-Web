@@ -195,7 +195,7 @@ export default function Home() {
         </div>
       </div>
       {/* Section Contact avec ses spotlights */}
-      <div id="contact" className="relative -mt-1">
+      <div id="contact" className="relative -mt-1 ">
         <div className="absolute inset-0 z-0">
           {/* Spotlight principal - forme organique */}
           <div
@@ -216,8 +216,8 @@ export default function Home() {
         <div className="relative z-10">
           <Contact />
         </div>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }
