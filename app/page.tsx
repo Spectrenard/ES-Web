@@ -10,6 +10,7 @@ import Ripple from "@/components/ui/ripple";
 import Projects from "@/components/Projects";
 import Processus from "@/components/Processus";
 import Faq from "@/components/Faq";
+import Reviews from "@/components/Reviews";
 
 export default function Home() {
   return (
@@ -156,6 +157,9 @@ export default function Home() {
       </div>
       <div id="processus" className="relative">
         <Processus />
+      </div>
+      <div>
+        <Reviews />
       </div>
       <div id="faq">
         <Faq />
