@@ -14,6 +14,15 @@ import Reviews from "@/components/Reviews";
 import Contact from "@/components/Contact";
 
 export default function Home() {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
   return (
     <div
       id="header"
@@ -112,7 +121,7 @@ export default function Home() {
                 stiffness: 200,
               }}
             >
-              <StandaloneShineButton>
+              <StandaloneShineButton onClick={() => scrollToSection("contact")}>
                 Obtenez votre devis gratuitement
               </StandaloneShineButton>
             </motion.div>
