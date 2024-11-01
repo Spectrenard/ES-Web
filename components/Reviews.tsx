@@ -1,6 +1,6 @@
 import Marquee from "./ui/marquee";
 import Image from "next/image";
-import { useInView } from "@/hooks/useInView";
+import { useResponsiveInView } from "@/hooks/useResponsiveInView";
 
 const reviews = [
   {
@@ -55,7 +55,7 @@ const reviews = [
 ];
 
 export default function Reviews() {
-  const [sectionRef, isInView] = useInView<HTMLElement>({
+  const [sectionRef, isInView] = useResponsiveInView<HTMLElement>({
     threshold: 0.1,
     once: true,
   });

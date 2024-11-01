@@ -3,8 +3,7 @@
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 import { Bolt, BarChart3, Boxes, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Particles from "./ui/particles";
-import { useInView } from "@/hooks/useInView";
+import { useResponsiveInView } from "@/hooks/useResponsiveInView";
 import type { CSSProperties } from "react";
 
 interface StatItem {
@@ -20,45 +19,36 @@ interface ChartStyle extends CSSProperties {
 
 // Animation de code défilant pour Sites Web Performants
 const CodeAnimation = () => {
-  const [ref, isInView] = useInView<HTMLDivElement>();
+  const [ref, isInView] = useResponsiveInView<HTMLDivElement>();
 
   const codeContent = `// Optimisation des performances
 import { lazy, Suspense } from 'react';
 import { optimizeImages } from './utils';
-
 // Chargement différé des composants
 const HeavyComponent = lazy(() => import('./Heavy'));
-
 // Configuration du cache
 const cacheConfig = {
   strategy: 'stale-while-revalidate',
   maxAge: 60 * 60 * 24,
 };
-
 // Optimisation des images
 const images = await optimizeImages({
   quality: 80,
   formats: ['webp', 'avif'],
 });
-
 // Mise en cache des API
 const cache = new Cache(cacheConfig);
 const data = await cache.fetch('/api/data');
-
 // Préchargement des ressources
 <link rel="preload" href="font.woff2" />;
 <link rel="preconnect" href="https://api.example.com" />;
-
 // Optimisation des CSS
 const criticalCSS = extractCritical(App);
 const styles = optimizeCSS(criticalCSS);
-
 // Compression Gzip/Brotli
 app.use(compression({ level: 9 }));
-
 // Service Worker pour le offline
 registerServiceWorker('./sw.js');
-
 // Métriques de performance
 measureWebVitals({
   CLS: 0.1,  // Cumulative Layout Shift
@@ -86,7 +76,7 @@ measureWebVitals({
 
 // Dashboard minimaliste pour SEO & Analytics
 const AnalyticsDashboard = () => {
-  const [ref, isInView] = useInView<HTMLDivElement>();
+  const [ref, isInView] = useResponsiveInView<HTMLDivElement>();
 
   const stats: StatItem[] = [
     { label: "Visibilité", value: "94%", trend: "+12%" },
@@ -177,7 +167,7 @@ const AnalyticsDashboard = () => {
 
 // Animation pour Applications Web
 const WebAppAnimation = () => {
-  const [ref, isInView] = useInView<HTMLDivElement>();
+  const [ref, isInView] = useResponsiveInView<HTMLDivElement>();
 
   return (
     <div
@@ -214,7 +204,7 @@ const WebAppAnimation = () => {
 
 // Grille de design avec motifs
 const DesignPatterns = () => {
-  const [ref, isInView] = useInView<HTMLDivElement>();
+  const [ref, isInView] = useResponsiveInView<HTMLDivElement>();
 
   return (
     <div
@@ -267,7 +257,7 @@ const items = [
 ];
 
 export default function Services() {
-  const [ref, isInView] = useInView<HTMLDivElement>();
+  const [ref, isInView] = useResponsiveInView<HTMLDivElement>();
 
   return (
     <div
