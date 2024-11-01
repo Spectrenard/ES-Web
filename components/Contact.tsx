@@ -1,49 +1,51 @@
-import { motion } from "framer-motion";
 import { StandaloneShineButton } from "./ui/cta";
 import { ArrowRight, CalendarClock, Mail } from "lucide-react";
+import { useInView } from "@/hooks/useInView";
 
 export default function Contact() {
-  return (
-    <div className="container mx-auto px-4 py-16 md:py-32 relative overflow-hidden">
-      {/* Nouveaux spotlights avec des positions et formes différentes */}
+  const [sectionRef, isInView] = useInView<HTMLDivElement>({
+    threshold: 0.1,
+    once: true,
+  });
 
+  return (
+    <div
+      ref={sectionRef}
+      className="container mx-auto px-4 py-16 md:py-32 relative overflow-hidden"
+    >
       <div className="max-w-4xl mx-auto text-center relative">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="inline-block px-4 py-1 bg-white/5 rounded-full border border-purple-500/20 mb-6
-            backdrop-blur-sm"
+        <div
+          className={`inline-block px-4 py-1 bg-white/5 rounded-full border border-purple-500/20 mb-6
+            backdrop-blur-sm opacity-0 ${isInView ? "animate-fade-in-up" : ""}`}
+          style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}
         >
           <span className="text-purple-200/80 text-sm">
             Prêt à vous lancer?
           </span>
-        </motion.div>
+        </div>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl md:text-5xl font-semibold mb-4 md:mb-6 text-stone-100 font-instrument"
+        <h2
+          className={`text-3xl md:text-5xl font-semibold mb-4 md:mb-6 text-stone-100 font-instrument
+            opacity-0 ${isInView ? "animate-fade-in-up" : ""}`}
+          style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}
         >
           Votre <span className="text-purple-300">site sur-mesure</span>, pour
           des résultats concrets
-        </motion.h2>
+        </h2>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-stone-400 mb-8 md:mb-12 text-base md:text-lg"
+        <p
+          className={`text-stone-400 mb-8 md:mb-12 text-base md:text-lg
+            opacity-0 ${isInView ? "animate-fade-in-up" : ""}`}
+          style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
         >
           De la création à la mise en ligne, on s'occupe de tout pour vous
           offrir un site qui attire et retient l'attention.
-        </motion.p>
+        </p>
 
-        <motion.div>
+        <div
+          className={`opacity-0 ${isInView ? "animate-fade-in-up" : ""}`}
+          style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
+        >
           {/* Card de contact */}
           <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-12 backdrop-blur-sm max-w-2xl mx-auto">
             <div className="flex flex-col items-center gap-6 md:gap-8">
@@ -93,7 +95,7 @@ export default function Contact() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

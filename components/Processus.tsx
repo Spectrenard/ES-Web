@@ -1,8 +1,6 @@
 import { StandaloneShineButton } from "./ui/cta";
 import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useInView } from "@/hooks/useInView";
 
 export default function Processus() {
   const scrollToSection = (id: string) => {
@@ -14,45 +12,11 @@ export default function Processus() {
       });
     }
   };
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const titleVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
-  const statsVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5, ease: "easeOut" },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: "easeOut" },
-    },
-  };
+  const [sectionRef, isInView] = useInView<HTMLElement>({
+    threshold: 0.1,
+    once: true,
+  });
 
   const etapes = [
     {
@@ -90,13 +54,7 @@ export default function Processus() {
   ];
 
   return (
-    <motion.section
-      ref={sectionRef}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={containerVariants}
-      className="py-16 md:py-32 relative"
-    >
+    <section ref={sectionRef} className="py-16 md:py-32 relative">
       {/* Spotlight ajusté pour mobile */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -108,9 +66,10 @@ export default function Processus() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          variants={titleVariants}
-          className="text-center space-y-4 mb-12 md:mb-16"
+        <div
+          className={`text-center space-y-4 mb-12 md:mb-16 opacity-0 ${
+            isInView ? "animate-fade-in-up" : ""
+          }`}
         >
           <div className="flex justify-center mb-4 md:mb-6">
             <span className="px-4 py-1 bg-white/10 rounded-full text-white/50 text-xs md:text-sm border border-white/20">
@@ -129,9 +88,10 @@ export default function Processus() {
           </p>
 
           {/* Stats responsives */}
-          <motion.div
-            variants={statsVariants}
-            className="flex flex-col md:flex-row justify-center gap-6 md:gap-12 mt-8"
+          <div
+            className={`flex flex-col md:flex-row justify-center gap-6 md:gap-12 mt-8 opacity-0 ${
+              isInView ? "animate-fade-in-scale" : ""
+            }`}
           >
             <div className="text-center">
               <div className="text-2xl md:text-3xl font-bold">10+</div>
@@ -151,24 +111,29 @@ export default function Processus() {
                 Semaines en Moyenne
               </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
         {/* Grille des étapes */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
           {etapes.map((etape, index) => (
-            <motion.div
+            <div
               key={etape.numero}
-              variants={cardVariants}
-              className="group relative"
+              className={`group relative opacity-0 ${
+                isInView ? "animate-fade-in-up" : ""
+              }`}
+              style={{
+                animationDelay: `${index * 200}ms`,
+                animationFillMode: "forwards",
+              }}
             >
               <div
                 className="absolute inset-0 bg-gradient-to-b from-purple-500/10 to-transparent rounded-xl 
-                  opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"
+                opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"
               />
               <div
                 className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8
-                  transform transition-all duration-300 hover:scale-[1.02]"
+                transform transition-all duration-300 hover:scale-[1.02]"
               >
                 <div className="text-3xl md:text-4xl mb-4">{etape.icon}</div>
                 <div className="flex items-center gap-2 mb-4">
@@ -189,14 +154,19 @@ export default function Processus() {
                   {etape.description}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Bouton CTA */}
-        <motion.div
-          variants={titleVariants}
-          className="mt-12 md:mt-20 text-center"
+        <div
+          className={`mt-12 md:mt-20 text-center opacity-0 ${
+            isInView ? "animate-fade-in-up" : ""
+          }`}
+          style={{
+            animationDelay: "0.8s",
+            animationFillMode: "forwards",
+          }}
         >
           <StandaloneShineButton
             onClick={() => scrollToSection("contact")}
@@ -207,12 +177,12 @@ export default function Processus() {
           >
             Démarrer votre projet
           </StandaloneShineButton>
-        </motion.div>
+        </div>
       </div>
 
       {/* Spotlights de fond ajustés */}
       <div className="absolute top-0 left-0 w-24 md:w-32 h-24 md:h-32 bg-purple-500/5 rounded-full blur-2xl md:blur-3xl" />
       <div className="absolute bottom-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-purple-500/5 rounded-full blur-2xl md:blur-3xl" />
-    </motion.section>
+    </section>
   );
 }

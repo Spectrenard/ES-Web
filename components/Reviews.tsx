@@ -1,6 +1,6 @@
 import Marquee from "./ui/marquee";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { useInView } from "@/hooks/useInView";
 
 const reviews = [
   {
@@ -55,8 +55,13 @@ const reviews = [
 ];
 
 export default function Reviews() {
+  const [sectionRef, isInView] = useInView<HTMLElement>({
+    threshold: 0.1,
+    once: true,
+  });
+
   return (
-    <section className="py-16 md:py-32 relative">
+    <section ref={sectionRef} className="py-16 md:py-32 relative">
       <div className="absolute inset-0">
         <div
           className="absolute left-1/2 -translate-x-1/2 top-1/4 
@@ -68,37 +73,34 @@ export default function Reviews() {
 
       <div className="container mx-auto px-4 relative">
         <div className="max-w-4xl mx-auto text-center mb-12 md:mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 md:px-4 py-1 md:py-1.5 mb-4 md:mb-6 
-            bg-gradient-to-r from-purple-500/10 to-purple-500/20 
-            rounded-full border border-purple-500/20"
+          <div
+            className={`inline-flex items-center gap-2 px-3 md:px-4 py-1 md:py-1.5 mb-4 md:mb-6 
+              bg-gradient-to-r from-purple-500/10 to-purple-500/20 
+              rounded-full border border-purple-500/20
+              opacity-0 ${isInView ? "animate-fade-in-up" : ""}`}
+            style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}
           >
             <span className="block w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-green-400 animate-pulse"></span>
             <span className="text-purple-400 text-xs md:text-sm font-medium">
               Avis vérifiés Google
             </span>
-          </motion.div>
+          </div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-3xl md:text-5xl font-semibold mb-6 md:mb-8 
-            bg-gradient-to-r from-white via-white to-purple-200 
-            bg-clip-text text-transparent"
+          <h2
+            className={`text-3xl md:text-5xl font-semibold mb-6 md:mb-8 
+              bg-gradient-to-r from-white via-white to-purple-200 
+              bg-clip-text text-transparent
+              opacity-0 ${isInView ? "animate-fade-in-up" : ""}`}
+            style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}
           >
             La voix de nos clients
-          </motion.h2>
+          </h2>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex justify-between items-center max-w-xl mx-auto mb-8 md:mb-12 
-            p-3 md:p-4 rounded-xl md:rounded-2xl bg-white/5 border border-white/10"
+          <div
+            className={`flex justify-between items-center max-w-xl mx-auto mb-8 md:mb-12 
+              p-3 md:p-4 rounded-xl md:rounded-2xl bg-white/5 border border-white/10
+              opacity-0 ${isInView ? "animate-fade-in-scale" : ""}`}
+            style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
           >
             <div className="flex items-center gap-2 md:gap-3">
               <div className="w-8 h-8 md:w-12 md:h-12">
@@ -132,18 +134,17 @@ export default function Reviews() {
                 de satisfaction
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-stone-400 text-sm md:text-lg leading-relaxed max-w-2xl mx-auto"
+          <p
+            className={`text-stone-400 text-sm md:text-lg leading-relaxed max-w-2xl mx-auto
+              opacity-0 ${isInView ? "animate-fade-in-up" : ""}`}
+            style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
           >
             Des retours authentiques de clients qui témoignent de leur
             expérience avec notre agence. Chaque avis reflète notre engagement
             envers l'excellence et la satisfaction client.
-          </motion.p>
+          </p>
         </div>
 
         <div>

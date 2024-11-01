@@ -1,54 +1,54 @@
 import AccordionExample from "./ui/Accordion";
-import { motion } from "framer-motion";
 import AnimatedShinyText from "./ui/animated-shiny-text";
+import { useInView } from "@/hooks/useInView";
 
 export default function Faq() {
+  const [sectionRef, isInView] = useInView<HTMLElement>({
+    threshold: 0.1,
+    once: true,
+  });
+
   return (
-    <section className="container mx-auto px-4 py-16 md:py-32 relative">
+    <section
+      ref={sectionRef}
+      className="container mx-auto px-4 py-16 md:py-32 relative"
+    >
       <div className="max-w-4xl mx-auto relative">
         {/* En-tête de la section */}
         <div className="text-center mb-8 space-y-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="inline-block px-4 py-1 bg-white/5 rounded-full border border-white/10"
+          <div
+            className={`inline-block px-4 py-1 bg-white/5 rounded-full border border-white/10
+              opacity-0 ${isInView ? "animate-fade-in-up" : ""}`}
+            style={{ animationDelay: "0.1s", animationFillMode: "forwards" }}
           >
             <AnimatedShinyText>Questions Fréquentes</AnimatedShinyText>
-          </motion.div>
+          </div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-3xl md:text-5xl font-semibold text-stone-100 font-instrument"
+          <h2
+            className={`text-3xl md:text-5xl font-semibold text-stone-100 font-instrument
+              opacity-0 ${isInView ? "animate-fade-in-up" : ""}`}
+            style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}
           >
             Tout ce que vous devez savoir
-          </motion.h2>
+          </h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-sm md:text-base text-stone-400 max-w-2xl mx-auto px-4 md:px-0"
+          <p
+            className={`text-sm md:text-base text-stone-400 max-w-2xl mx-auto px-4 md:px-0
+              opacity-0 ${isInView ? "animate-fade-in-up" : ""}`}
+            style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
           >
             Découvrez les réponses aux questions les plus courantes sur nos
             services et notre façon de travailler
-          </motion.p>
+          </p>
         </div>
 
         {/* Composant Accordion */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+        <div
+          className={`opacity-0 ${isInView ? "animate-fade-in-up" : ""}`}
+          style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
         >
           <AccordionExample />
-        </motion.div>
+        </div>
       </div>
     </section>
   );
