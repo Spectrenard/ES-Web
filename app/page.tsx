@@ -25,7 +25,10 @@ export default function Home() {
     }
   };
   return (
-    <div id="header" className="bg-gray-950 min-h-svh relative ">
+    <div
+      id="header"
+      className="bg-gray-950 min-h-svh relative overflow-x-hidden"
+    >
       <Particles
         className="absolute inset-0 z-19 pointer-events-none"
         quantity={100}
@@ -38,10 +41,11 @@ export default function Home() {
         <div className="absolute inset-0">
           {/* Spotlight principal - centre haut */}
           <div
-            className="absolute left-1/2 top-1/4 -translate-x-1/2 
-            w-[900px] h-[600px] 
-            bg-gradient-to-b from-purple-500/30 via-purple-400/20 to-transparent 
-            blur-[140px] rounded-full"
+            className="absolute left-1/2 -translate-x-1/2 top-1/4 
+    w-[300px] md:w-[800px] h-[300px] md:h-[600px] 
+    bg-gradient-to-b from-purple-500/10 via-purple-400/5 to-transparent 
+    blur-[40px] md:blur-[120px] rounded-full
+    transform-gpu"
           />
 
           {/* Spotlight gauche */}

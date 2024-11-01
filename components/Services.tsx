@@ -292,6 +292,28 @@ const items = [
   },
 ];
 
+// Modifions les transitions pour être plus légères sur mobile
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+// Réduisons la complexité des animations sur mobile
+const isReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+const animationConfig = {
+  duration: isReducedMotion ? 0.3 : 0.5,
+  repeat: isReducedMotion ? 0 : Infinity,
+};
+
 export default function Services() {
   return (
     <div className="relative w-full min-h-screen px-2 md:px-4 py-12 md:py-20 overflow-hidden">
