@@ -8,19 +8,13 @@ export default function Faq() {
   });
 
   return (
-    <section className="container mx-auto px-4 py-16 md:py-32 relative">
+    <section className="container mx-auto px-4 py-16 md:py-32 relative isolate">
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
-          className="absolute left-0 top-0
-            w-[300px] md:w-[400px] h-[200px] md:h-[300px] 
-            bg-gradient-to-br from-purple-500/10 via-purple-400/5 to-transparent 
-            blur-[60px] md:blur-[100px] rounded-full"
-        />
-        <div
-          className="absolute right-0 bottom-0
-            w-[300px] md:w-[400px] h-[200px] md:h-[300px] 
-            bg-gradient-to-tl from-purple-500/10 via-purple-400/5 to-transparent 
-            blur-[60px] md:blur-[100px] rounded-full"
+          className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2
+          w-[200px] md:w-[600px] h-[300px] md:h-[400px] 
+          bg-gradient-to-b from-purple-500/10 via-purple-400/5 to-transparent 
+          blur-[60px] md:blur-[100px] rounded-full"
         />
       </div>
 
