@@ -6,6 +6,15 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 
 export default function Processus() {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
@@ -178,6 +187,7 @@ export default function Processus() {
 
         <motion.div variants={titleVariants} className="mt-20 text-center">
           <StandaloneShineButton
+            onClick={() => scrollToSection("contact")}
             icon={
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
             }

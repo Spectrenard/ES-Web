@@ -100,8 +100,8 @@ const AnalyticsDashboard = () => {
         {/* Statistiques principales */}
         <div className="grid grid-cols-2 gap-2 mb-2">
           {[
-            { label: "Visiteurs", value: "2.4k", trend: "+12%" },
-            { label: "Temps moyen", value: "3:45", trend: "+8%" },
+            { label: "Visibilité", value: "94%", trend: "+12%" },
+            { label: "Classement", value: "Top 3", trend: "+5" },
           ].map((stat, i) => (
             <motion.div
               key={i}
@@ -261,15 +261,15 @@ const items = [
     icon: <Sparkles className="h-4 w-4 text-purple-300" />,
   },
   {
-    title: "Applications Web",
+    title: "Sites/Applications Web",
     description: "Solutions sur mesure adaptées à vos besoins spécifiques.",
     header: <WebAppAnimation />,
     icon: <Boxes className="h-4 w-4 text-purple-300" />,
   },
   {
-    title: "SEO & Analytics",
+    title: "Optimisation SEO",
     description:
-      "Visibilité maximale et suivi précis des performances de votre site.",
+      "Visibilité optimale de votre site sur Google et autres moteurs de recherche.",
     header: <AnalyticsDashboard />,
     icon: <BarChart3 className="h-4 w-4 text-purple-300" />,
   },
