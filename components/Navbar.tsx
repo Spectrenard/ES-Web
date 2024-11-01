@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
 import LogoSvg from "@/public/assets/svg/logoipsum-287.svg";
 import Button2 from "./ui/Button2";

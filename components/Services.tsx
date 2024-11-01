@@ -274,13 +274,6 @@ export default function Services() {
       ref={ref}
       className="relative w-full min-h-screen px-2 md:px-4 py-12 md:py-20 overflow-hidden"
     >
-      <Particles
-        className="absolute inset-0 z-19 pointer-events-none"
-        quantity={50}
-        staticity={50}
-        color="#ffffff"
-      />
-
       <div className="relative z-10">
         <div className="flex items-center justify-center max-w-7xl mx-auto w-full gap-2 md:gap-4 mb-8 md:mb-16">
           <div className="h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-gray-300 flex-grow" />

@@ -28,12 +28,12 @@ export default function Home() {
       id="header"
       className="bg-gray-950 min-h-svh relative overflow-x-hidden"
     >
-      <Particles
+      {/* <Particles
         className="absolute inset-0 z-19 pointer-events-none"
         quantity={100}
         staticity={50}
         color="#64748b"
-      />
+      /> */}
 
       <Navbar />
       <section className="container mx-auto py-16 md:py-32 relative z-10">
