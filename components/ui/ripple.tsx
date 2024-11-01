@@ -1,6 +1,5 @@
 import React, { CSSProperties } from "react";
 import { cn } from "@/lib/utils";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 interface RippleProps {
   mainCircleSize?: number;
@@ -15,11 +14,7 @@ const Ripple = React.memo(function Ripple({
   numCircles = 8,
   className,
 }: RippleProps) {
-  const isMobile = useMediaQuery("(max-width: 768px)");
-
-  // Juste réduire la taille sur mobile
-  const adjustedSize = isMobile ? mainCircleSize * 0.7 : mainCircleSize;
-  const circleSpacing = isMobile ? 50 : 70;
+  const circleSpacing = 70;
 
   return (
     <div
@@ -29,7 +24,7 @@ const Ripple = React.memo(function Ripple({
       )}
     >
       {Array.from({ length: numCircles }, (_, i) => {
-        const size = adjustedSize + i * circleSpacing;
+        const size = mainCircleSize + i * circleSpacing;
         const opacity = mainCircleOpacity - i * 0.03;
         const animationDelay = `${i * 0.06}s`;
         const borderStyle = i === numCircles - 1 ? "dashed" : "solid";
