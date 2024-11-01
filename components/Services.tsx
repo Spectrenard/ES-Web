@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Particles from "./ui/particles";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 // Animation de code défilant pour Sites Web Performants
 const CodeAnimation = () => {
@@ -305,16 +305,33 @@ const cardVariants = {
   },
 };
 
-// Réduisons la complexité des animations sur mobile
-const isReducedMotion = window.matchMedia(
-  "(prefers-reduced-motion: reduce)"
-).matches;
-const animationConfig = {
-  duration: isReducedMotion ? 0.3 : 0.5,
-  repeat: isReducedMotion ? 0 : Infinity,
+// Remplaçons la vérification de window par un hook personnalisé
+const useReducedMotion = () => {
+  const [isReduced, setIsReduced] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setIsReduced(mediaQuery.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsReduced(e.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
+
+  return isReduced;
 };
 
 export default function Services() {
+  const isReducedMotion = useReducedMotion();
+
+  const animationConfig = {
+    duration: isReducedMotion ? 0.3 : 0.5,
+    repeat: isReducedMotion ? 0 : Infinity,
+  };
+
   return (
     <div className="relative w-full min-h-screen px-2 md:px-4 py-12 md:py-20 overflow-hidden">
       <Particles
