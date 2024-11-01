@@ -54,14 +54,14 @@ export default function Processus() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-16 md:py-32 relative isolate">
+    <section ref={sectionRef} className="py-16 md:py-32 relative">
       {/* Spotlight ajusté pour mobile */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2
-          w-[200px] md:w-[1000px] h-[300px] md:h-[600px] 
-          bg-gradient-to-b from-purple-500/10 via-purple-400/5 to-transparent 
-          blur-[60px] md:blur-[100px] rounded-full"
+          w-[300px] md:w-[1000px] h-[400px] md:h-[600px] 
+          bg-gradient-to-b from-purple-500/20 via-purple-400/10 to-transparent 
+          blur-[80px] md:blur-[120px] rounded-full"
         />
       </div>
 
@@ -130,6 +130,10 @@ export default function Processus() {
               }}
             >
               <div
+                className="absolute inset-0 bg-gradient-to-b from-purple-500/10 to-transparent rounded-xl 
+                opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 blur-xl"
+              />
+              <div
                 className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8
                 transform transition-all duration-300 hover:scale-[1.02]"
               >
@@ -178,9 +182,9 @@ export default function Processus() {
         </div>
       </div>
 
-      {/* Remplacer les spotlights de fond en bas du fichier par : */}
-      <div className="absolute top-0 left-0 w-16 md:w-32 h-16 md:h-32 bg-purple-500/5 rounded-full blur-xl md:blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-16 md:w-32 h-16 md:h-32 bg-purple-500/5 rounded-full blur-xl md:blur-3xl pointer-events-none" />
+      {/* Spotlights de fond ajustés */}
+      <div className="absolute top-0 left-0 w-24 md:w-32 h-24 md:h-32 bg-purple-500/5 rounded-full blur-2xl md:blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-purple-500/5 rounded-full blur-2xl md:blur-3xl" />
     </section>
   );
 }
