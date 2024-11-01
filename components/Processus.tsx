@@ -55,45 +55,7 @@ export default function Processus() {
 
   return (
     <section ref={sectionRef} className="py-16 md:py-32 relative">
-      {/* Spotlights mobiles avec animation */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden md:hidden">
-        {/* Spotlight gauche */}
-        <div
-          className={`absolute left-0 top-1/4 
-          w-[300px] h-[400px]
-          bg-gradient-to-r from-purple-500/20 via-purple-400/10 to-transparent 
-          blur-[80px] rounded-full
-          opacity-0 ${isInView ? "animate-fade-in-up" : ""}`}
-          style={{
-            animationDelay: "200ms",
-            animationFillMode: "forwards",
-          }}
-        />
-        {/* Spotlight droit */}
-        <div
-          className={`absolute right-0 bottom-1/4
-          w-[300px] h-[400px]
-          bg-gradient-to-l from-purple-500/20 via-purple-400/10 to-transparent 
-          blur-[80px] rounded-full
-          opacity-0 ${isInView ? "animate-fade-in-up" : ""}`}
-          style={{
-            animationDelay: "400ms",
-            animationFillMode: "forwards",
-          }}
-        />
-      </div>
-
-      {/* Spotlight desktop central */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden hidden md:block">
-        <div
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
-          w-[900px] h-[500px]
-          bg-gradient-radial from-purple-500/20 via-purple-400/10 to-transparent 
-          blur-[120px] rounded-full"
-        />
-      </div>
-
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4">
         <div
           className={`text-center space-y-4 mb-12 md:mb-16 opacity-0 ${
             isInView ? "animate-fade-in-up" : ""
@@ -209,10 +171,6 @@ export default function Processus() {
           </StandaloneShineButton>
         </div>
       </div>
-
-      {/* Spotlights de fond ajustés */}
-      <div className="absolute top-0 left-0 w-24 md:w-32 h-24 md:h-32 bg-purple-500/5 rounded-full blur-2xl md:blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-purple-500/5 rounded-full blur-2xl md:blur-3xl" />
     </section>
   );
 }

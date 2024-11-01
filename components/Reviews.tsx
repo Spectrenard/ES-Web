@@ -62,15 +62,6 @@ export default function Reviews() {
 
   return (
     <section ref={sectionRef} className="py-16 md:py-32 relative">
-      <div className="absolute inset-0">
-        <div
-          className="absolute left-1/2 -translate-x-1/2 top-1/4 
-          w-[300px] md:w-[800px] h-[300px] md:h-[600px] 
-          bg-gradient-to-b from-purple-500/20 via-purple-400/10 to-transparent 
-          blur-[60px] md:blur-[120px] rounded-full"
-        />
-      </div>
-
       <div className="container mx-auto relative">
         <div className="max-w-4xl mx-auto text-center mb-12 md:mb-20">
           <div
