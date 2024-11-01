@@ -4,7 +4,7 @@ import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 import { Bolt, BarChart3, Boxes, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Particles from "./ui/particles";
-import { useResponsiveInView } from "@/hooks/useResponsiveInView";
+import { useInView } from "@/hooks/useInView";
 import type { CSSProperties } from "react";
 
 interface StatItem {
@@ -20,7 +20,7 @@ interface ChartStyle extends CSSProperties {
 
 // Animation de code défilant pour Sites Web Performants
 const CodeAnimation = () => {
-  const [ref, isInView] = useResponsiveInView<HTMLDivElement>();
+  const [ref, isInView] = useInView<HTMLDivElement>();
 
   const codeContent = `// Optimisation des performances
 import { lazy, Suspense } from 'react';
@@ -86,7 +86,7 @@ measureWebVitals({
 
 // Dashboard minimaliste pour SEO & Analytics
 const AnalyticsDashboard = () => {
-  const [ref, isInView] = useResponsiveInView<HTMLDivElement>();
+  const [ref, isInView] = useInView<HTMLDivElement>();
 
   const stats: StatItem[] = [
     { label: "Visibilité", value: "94%", trend: "+12%" },
@@ -177,7 +177,7 @@ const AnalyticsDashboard = () => {
 
 // Animation pour Applications Web
 const WebAppAnimation = () => {
-  const [ref, isInView] = useResponsiveInView<HTMLDivElement>();
+  const [ref, isInView] = useInView<HTMLDivElement>();
 
   return (
     <div
@@ -214,7 +214,7 @@ const WebAppAnimation = () => {
 
 // Grille de design avec motifs
 const DesignPatterns = () => {
-  const [ref, isInView] = useResponsiveInView<HTMLDivElement>();
+  const [ref, isInView] = useInView<HTMLDivElement>();
 
   return (
     <div
@@ -267,7 +267,7 @@ const items = [
 ];
 
 export default function Services() {
-  const [ref, isInView] = useResponsiveInView<HTMLDivElement>();
+  const [ref, isInView] = useInView<HTMLDivElement>();
 
   return (
     <div

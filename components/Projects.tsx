@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useResponsiveInView } from "@/hooks/useResponsiveInView";
+import { useInView } from "@/hooks/useInView";
 
 const projects = [
   {
@@ -35,9 +35,7 @@ const projects = [
 ];
 
 export default function Projects() {
-  const [titleRef, titleInView] = useResponsiveInView<HTMLDivElement>({
-    once: true,
-  });
+  const [titleRef, titleInView] = useInView<HTMLDivElement>({ once: true });
 
   return (
     <section className="py-12 md:py-20">
@@ -59,11 +57,10 @@ export default function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           {projects.map((project, index) => {
-            const [projectRef, projectInView] =
-              useResponsiveInView<HTMLDivElement>({
-                once: true,
-                threshold: 0.2,
-              });
+            const [projectRef, projectInView] = useInView<HTMLDivElement>({
+              once: true,
+              threshold: 0.2,
+            });
 
             return (
               <div

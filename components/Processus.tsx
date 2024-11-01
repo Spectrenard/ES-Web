@@ -1,6 +1,6 @@
 import { StandaloneShineButton } from "./ui/cta";
 import { ArrowRight } from "lucide-react";
-import { useResponsiveInView } from "@/hooks/useResponsiveInView";
+import { useInView } from "@/hooks/useInView";
 
 export default function Processus() {
   const scrollToSection = (id: string) => {
@@ -13,7 +13,7 @@ export default function Processus() {
     }
   };
 
-  const [sectionRef, isInView] = useResponsiveInView<HTMLElement>({
+  const [sectionRef, isInView] = useInView<HTMLElement>({
     threshold: 0.1,
     once: true,
   });

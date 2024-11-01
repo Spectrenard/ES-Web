@@ -1,9 +1,9 @@
 import { StandaloneShineButton } from "./ui/cta";
 import { ArrowRight, CalendarClock, Mail } from "lucide-react";
-import { useResponsiveInView } from "@/hooks/useResponsiveInView";
+import { useInView } from "@/hooks/useInView";
 
 export default function Contact() {
-  const [sectionRef, isInView] = useResponsiveInView<HTMLDivElement>({
+  const [sectionRef, isInView] = useInView<HTMLDivElement>({
     threshold: 0.1,
     once: true,
   });
