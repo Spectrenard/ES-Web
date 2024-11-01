@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import LogoSvg from "@/public/assets/svg/logoipsum-287.svg";
+import LogoSvg from "@/public/assets/svg/logo.svg";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,7 +15,7 @@ export default function Footer() {
               src={LogoSvg}
               alt="ES Web Logo"
               width={120}
-              height={40}
+              height={120}
               className="w-auto h-8"
             />
           </div>

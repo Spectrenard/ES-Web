@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import LogoSvg from "@/public/assets/svg/logoipsum-287.svg";
+import LogoSvg from "@/public/assets/svg/logo.svg";
 import Button2 from "./ui/Button2";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
@@ -31,10 +31,10 @@ export default function Navbar() {
             >
               <Image
                 src={LogoSvg}
-                alt="ES Web Logo"
+                alt="Logo"
                 width={120}
                 height={40}
-                className="w-auto h-6 md:h-8"
+                className="w-auto h-8 md:h-10"
                 style={{ display: "block" }}
               />
             </button>
