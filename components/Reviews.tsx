@@ -137,7 +137,7 @@ export default function Reviews() {
           </div>
 
           <p
-            className={`text-stone-400 text-sm md:text-lg leading-relaxed max-w-2xl mx-auto
+            className={`text-stone-400 max-sm:text-xs text-sm md:text-lg leading-relaxed max-w-2xl mx-auto
               opacity-0 ${isInView ? "animate-fade-in-up" : ""}`}
             style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
           >
@@ -154,7 +154,8 @@ export default function Reviews() {
                 key={index}
                 className="mx-2 md:mx-4 p-4 md:p-6 relative
                   bg-gradient-to-br from-slate-800/50 to-slate-900/50
-                  backdrop-blur-sm rounded-xl md:rounded-2xl w-[280px] md:w-[450px]
+                  backdrop-blur-sm rounded-xl md:rounded-2xl 
+                  w-[360px] md:w-[450px]
                   border border-slate-700/50
                   hover:border-purple-500/30 transition-all duration-500
                   hover:shadow-xl hover:shadow-purple-500/5
@@ -163,8 +164,8 @@ export default function Reviews() {
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl md:rounded-2xl" />
 
                 <div className="relative">
-                  <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full overflow-hidden shadow-lg shadow-purple-500/20">
+                  <div className="flex items-center gap-2 mb-3 md:mb-6">
+                    <div className="w-7 h-7 md:w-10 md:h-10 rounded-full overflow-hidden shadow-lg shadow-purple-500/20 flex-shrink-0">
                       <Image
                         src={review.avatar}
                         alt={`Avatar de ${review.name}`}
@@ -173,25 +174,25 @@ export default function Reviews() {
                         className="object-cover"
                       />
                     </div>
-                    <div>
-                      <p className="text-purple-400 font-medium text-xs md:text-sm">
+                    <div className="min-w-0">
+                      <p className="text-purple-400 font-medium text-xs md:text-sm truncate">
                         {review.name}
                       </p>
-                      <p className="text-stone-500 text-[10px] md:text-xs">
+                      <p className="text-stone-500 text-[10px] md:text-xs truncate">
                         {review.company}
                       </p>
                     </div>
                   </div>
 
                   <svg
-                    className="w-6 h-6 md:w-8 md:h-8 text-purple-500/20 mb-3 md:mb-4"
+                    className="w-5 h-5 md:w-8 md:h-8 text-purple-500/20 mb-2 md:mb-4"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg>
 
-                  <p className="text-stone-300 text-xs md:text-sm leading-relaxed">
+                  <p className="text-stone-300 text-xs md:text-sm leading-relaxed line-clamp-4 md:line-clamp-none">
                     {review.content}
                   </p>
                 </div>

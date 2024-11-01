@@ -67,7 +67,10 @@ export default function Contact() {
               </div>
 
               <div className="flex flex-col gap-3 w-full sm:flex-row-reverse sm:gap-4 justify-center">
-                <a href="mailto:e.sahinnn61@gmail.com">
+                <a
+                  href="mailto:e.sahinnn61@gmail.com"
+                  className="w-full sm:w-auto"
+                >
                   <StandaloneShineButton
                     icon={
                       <Mail className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
@@ -82,11 +85,12 @@ export default function Contact() {
                   href="https://calendly.com/votre-lien"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="mx-auto sm:w-auto"
                 >
                   <button
-                    className="px-6 py-2.5 border border-white/10 rounded-lg text-stone-200/70 
+                    className=" px-4 py-2.5 border border-white/10 rounded-lg text-stone-200/70 
                     hover:bg-white/10 hover:border-white/20 transition-all duration-300 
-                    flex items-center gap-2"
+                    flex items-center justify-center gap-2"
                   >
                     <CalendarClock className="w-4 h-4" />
                     <span>Planifiez une consultation</span>

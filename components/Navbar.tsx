@@ -21,7 +21,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="fixed top-4 left-1/2 -translate-x-1/2 w-[100%] max-w-7xl z-50">
+    <div className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50">
       <nav className="w-full px-4 md:px-6 py-4 backdrop-blur-md bg-gray-900/45 border rounded-full border-white/10">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -51,34 +51,40 @@ export default function Navbar() {
 
           {/* Menu mobile */}
           {isMenuOpen && (
-            <div className="absolute top-full left-0 right-0 mt-2 p-4 md:hidden bg-gray-900/95 backdrop-blur-md rounded-xl border border-white/10">
-              <div className="flex flex-col gap-4">
+            <div className="absolute top-full left-4 right-4 mt-2 p-4 md:hidden bg-gray-900/95 backdrop-blur-md rounded-xl border border-white/10">
+              <div className="flex flex-col gap-4 max-w-md mx-auto">
                 <button
                   onClick={() => scrollToSection("services")}
-                  className="text-gray-100 hover:text-white transition-colors py-2"
+                  className="text-gray-100 hover:text-white transition-colors py-2 text-center"
                 >
                   Services
                 </button>
                 <button
                   onClick={() => scrollToSection("projects")}
-                  className="text-gray-100 hover:text-white transition-colors py-2"
+                  className="text-gray-100 hover:text-white transition-colors py-2 text-center"
                 >
                   Projets
                 </button>
                 <button
                   onClick={() => scrollToSection("processus")}
-                  className="text-gray-100 hover:text-white transition-colors py-2"
+                  className="text-gray-100 hover:text-white transition-colors py-2 text-center"
                 >
                   Processus
                 </button>
                 <button
                   onClick={() => scrollToSection("faq")}
-                  className="text-gray-100 hover:text-white transition-colors py-2"
+                  className="text-gray-100 hover:text-white transition-colors py-2 text-center"
                 >
                   F.A.Q
                 </button>
-                <div onClick={() => scrollToSection("contact")}>
-                  <Button2 text="Contactez-nous" className="w-full" />
+                <div
+                  onClick={() => scrollToSection("contact")}
+                  className="flex justify-center w-full"
+                >
+                  <Button2
+                    text="Contactez-nous"
+                    className="w-full max-w-[200px] flex justify-center items-center"
+                  />
                 </div>
               </div>
             </div>
@@ -117,7 +123,7 @@ export default function Navbar() {
             onClick={() => scrollToSection("contact")}
             className="hidden md:flex justify-end"
           >
-            <Button2 text="Contactez-nous" />
+            <Button2 text="Contactez-nous" className="" />
           </div>
         </div>
       </nav>

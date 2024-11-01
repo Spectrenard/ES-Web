@@ -7,7 +7,6 @@ interface MarqueeProps {
   children?: React.ReactNode;
   vertical?: boolean;
   repeat?: number;
-  [key: string]: any;
 }
 
 export default function Marquee({
@@ -16,17 +15,12 @@ export default function Marquee({
   pauseOnHover = false,
   children,
   vertical = false,
-  repeat = 4,
-  ...props
+  repeat = 2,
 }: MarqueeProps) {
-  const isMobile = window.innerWidth < 768;
-  const duration = isMobile ? "60s" : "40s";
-
   return (
     <div
-      {...props}
       className={cn(
-        `group flex overflow-hidden p-2 [--duration:${duration}] [--gap:1rem] [gap:var(--gap)]`,
+        "group relative flex overflow-hidden [--duration:40s] [--gap:1rem]",
         {
           "flex-row": !vertical,
           "flex-col": vertical,
@@ -34,21 +28,24 @@ export default function Marquee({
         className
       )}
     >
-      {Array(repeat)
-        .fill(0)
-        .map((_, i) => (
-          <div
-            key={i}
-            className={cn("flex shrink-0 justify-around [gap:var(--gap)]", {
-              "animate-marquee flex-row": !vertical,
-              "animate-marquee-vertical flex-col": vertical,
-              "group-hover:[animation-play-state:paused]": pauseOnHover,
-              "[animation-direction:reverse]": reverse,
-            })}
-          >
-            {children}
-          </div>
-        ))}
+      <div
+        className={cn("flex min-w-full shrink-0 items-center gap-4", {
+          "animate-[marquee_var(--duration)_linear_infinite]": !vertical,
+          "group-hover:[animation-play-state:paused]": pauseOnHover,
+          "[animation-direction:reverse]": reverse,
+        })}
+      >
+        {children}
+      </div>
+      <div
+        className={cn("flex min-w-full shrink-0 items-center gap-4", {
+          "animate-[marquee_var(--duration)_linear_infinite]": !vertical,
+          "group-hover:[animation-play-state:paused]": pauseOnHover,
+          "[animation-direction:reverse]": reverse,
+        })}
+      >
+        {children}
+      </div>
     </div>
   );
 }

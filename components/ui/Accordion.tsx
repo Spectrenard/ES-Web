@@ -1,6 +1,6 @@
 import { motion, Variants } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface AccordionItemProps {
   title: string;
@@ -22,6 +22,19 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   isExpanded,
   onToggle,
 }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // 768px est le breakpoint md de Tailwind
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const cardVariants: Variants = {
     collapsed: {
       height: "70px",
@@ -41,10 +54,36 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
     },
   };
 
-  const chevronVariants: Variants = {
-    collapsed: { rotate: 0 },
-    expanded: { rotate: 180 },
-  };
+  if (isMobile) {
+    return (
+      <div
+        className="w-full backdrop-blur-sm bg-white/5 border border-white/10 
+                   my-4 cursor-pointer select-none rounded-xl 
+                   hover:bg-white/10 transition-colors duration-300"
+        onClick={onToggle}
+      >
+        <div className="flex items-center justify-between p-5">
+          <h2 className="text-base font-medium text-stone-100 text-center flex-1">
+            {title}
+          </h2>
+          <div
+            className={`text-purple-400 ml-4 flex-shrink-0 transition-transform duration-300 ${
+              isExpanded ? "rotate-180" : ""
+            }`}
+          >
+            <ChevronDown size={20} />
+          </div>
+        </div>
+        <div
+          className={`px-5 pb-5 overflow-hidden transition-all duration-300 ${
+            isExpanded ? "block" : "hidden"
+          }`}
+        >
+          <p className="text-sm text-stone-400 leading-relaxed">{content}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <motion.div
@@ -57,8 +96,13 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
       onClick={onToggle}
     >
       <div className="flex items-center justify-between p-5">
-        <h2 className="text-base font-medium text-stone-100">{title}</h2>
-        <motion.div variants={chevronVariants} className="text-purple-400">
+        <h2 className="text-base font-medium text-stone-100  flex-1">
+          {title}
+        </h2>
+        <motion.div
+          animate={{ rotate: isExpanded ? 180 : 0 }}
+          className="text-purple-400 ml-4 flex-shrink-0"
+        >
           <ChevronDown size={20} />
         </motion.div>
       </div>
@@ -122,7 +166,7 @@ const accordionItems = [
 const AccordionExample: React.FC = () => {
   return (
     <div>
-      <div className="p-8">
+      <div className="">
         <Accordion items={accordionItems} />
       </div>
     </div>

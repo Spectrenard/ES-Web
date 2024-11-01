@@ -89,8 +89,10 @@ export default function Processus() {
 
           {/* Stats responsives */}
           <div
-            className={`flex flex-col md:flex-row justify-center gap-6 md:gap-12 mt-8 opacity-0 ${
-              isInView ? "animate-fade-in-scale" : ""
+            className={`flex flex-col md:flex-row justify-center gap-6 md:gap-12 mt-8 transition-all duration-700 ${
+              isInView
+                ? "translate-y-0 opacity-100"
+                : "translate-y-10 opacity-0"
             }`}
           >
             <div className="text-center">
