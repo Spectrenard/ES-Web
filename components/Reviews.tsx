@@ -71,10 +71,10 @@ export default function Reviews() {
         />
       </div>
 
-      <div className="container mx-auto px-4 relative">
+      <div className="container mx-auto relative">
         <div className="max-w-4xl mx-auto text-center mb-12 md:mb-20">
           <div
-            className={`inline-flex items-center gap-2 px-3 md:px-4 py-1 md:py-1.5 mb-4 md:mb-6 
+            className={` inline-flex items-center gap-2 px-3 md:px-4 py-1 md:py-1.5 mb-4 md:mb-6 
               bg-gradient-to-r from-purple-500/10 to-purple-500/20 
               rounded-full border border-purple-500/20
               opacity-0 ${isInView ? "animate-fade-in-up" : ""}`}
@@ -87,7 +87,7 @@ export default function Reviews() {
           </div>
 
           <h2
-            className={`text-3xl md:text-5xl font-semibold mb-6 md:mb-8 
+            className={`text-3xl md:text-5xl px-4 font-semibold mb-6 md:mb-8 
               bg-gradient-to-r from-white via-white to-purple-200 
               bg-clip-text text-transparent
               opacity-0 ${isInView ? "animate-fade-in-up" : ""}`}
@@ -97,7 +97,7 @@ export default function Reviews() {
           </h2>
 
           <div
-            className={`flex justify-between items-center max-w-xl mx-auto mb-8 md:mb-12 
+            className={`flex justify-between items-center max-w-xl max-sm:mx-6  mx-auto mb-8 md:mb-12 
               p-3 md:p-4 rounded-xl md:rounded-2xl bg-white/5 border border-white/10
               opacity-0 ${isInView ? "animate-fade-in-scale" : ""}`}
             style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
@@ -137,7 +137,7 @@ export default function Reviews() {
           </div>
 
           <p
-            className={`text-stone-400 max-sm:text-xs text-sm md:text-lg leading-relaxed max-w-2xl mx-auto
+            className={`text-stone-400 px-4 max-sm:text-xs text-sm md:text-lg leading-relaxed max-w-2xl mx-auto
               opacity-0 ${isInView ? "animate-fade-in-up" : ""}`}
             style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
           >

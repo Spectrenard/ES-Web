@@ -130,10 +130,6 @@ export default function Processus() {
               }}
             >
               <div
-                className="absolute inset-0 bg-gradient-to-b from-purple-500/10 to-transparent rounded-xl 
-                opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"
-              />
-              <div
                 className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8
                 transform transition-all duration-300 hover:scale-[1.02]"
               >

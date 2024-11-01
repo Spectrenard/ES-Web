@@ -3,6 +3,7 @@
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 import { Bolt, BarChart3, Boxes, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
+
 import { useResponsiveInView } from "@/hooks/useResponsiveInView";
 import type { CSSProperties } from "react";
 
