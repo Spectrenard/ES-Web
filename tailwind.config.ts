@@ -121,6 +121,8 @@ const config = {
         "bounce-in": "bounceIn 0.5s cubic-bezier(0.17, 0.67, 0.83, 0.67)",
         "slide-in": "slideIn 0.5s ease-out",
         "scale-in": "scaleIn 0.3s ease-out",
+        "mobile-fade": "simpleFade 0.3s ease-out",
+        "mobile-slide": "simpleSlide 0.4s ease-out",
       },
       keyframes: {
         "shimmer-slide": {
@@ -374,6 +376,14 @@ const config = {
             transform: "scale(1)",
             opacity: "1",
           },
+        },
+        simpleFade: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        simpleSlide: {
+          "0%": { transform: "translateY(10px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
         },
       },
       backgroundImage: {
