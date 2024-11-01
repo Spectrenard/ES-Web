@@ -5,7 +5,6 @@ import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { StandaloneShineButton } from "@/components/ui/cta";
 import Particles from "@/components/ui/particles";
 import { CheckCircle, Clock, Award } from "lucide-react";
-import { motion } from "framer-motion";
 import Ripple from "@/components/ui/ripple";
 import Projects from "@/components/Projects";
 import Processus from "@/components/Processus";
@@ -25,10 +24,7 @@ export default function Home() {
     }
   };
   return (
-    <div
-      id="header"
-      className="bg-gray-950 min-h-svh relative overflow-x-hidden"
-    >
+    <div id="header" className="bg-gray-950 min-h-svh relative ">
       <Particles
         className="absolute inset-0 z-19 pointer-events-none"
         quantity={100}
@@ -41,11 +37,10 @@ export default function Home() {
         <div className="absolute inset-0">
           {/* Spotlight principal - centre haut */}
           <div
-            className="absolute left-1/2 -translate-x-1/2 top-1/4 
-    w-[300px] md:w-[800px] h-[300px] md:h-[600px] 
-    bg-gradient-to-b from-purple-500/10 via-purple-400/5 to-transparent 
-    blur-[40px] md:blur-[120px] rounded-full
-    transform-gpu"
+            className="absolute left-1/2 top-1/4 -translate-x-1/2 
+            w-[900px] h-[600px] 
+            bg-gradient-to-b from-purple-500/30 via-purple-400/20 to-transparent 
+            blur-[140px] rounded-full"
           />
 
           {/* Spotlight gauche */}
@@ -68,43 +63,23 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center relative">
           <div className="py-20 md:py-40 space-y-6">
             <Ripple />
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-block px-4 py-1 bg-white/5 rounded-full border border-white/10"
-            >
+            <div className="opacity-0 animate-header-slide-up inline-block px-4 py-1 bg-white/5 rounded-full border border-white/10">
               <AnimatedShinyText>✨ Réponse en 24h</AnimatedShinyText>
-            </motion.div>
+            </div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-4xl md:text-6xl font-semibold mb-6 text-stone-100 font-instrument"
-            >
+            <h1 className="opacity-0 animate-header-slide-up-1 text-4xl md:text-6xl font-semibold mb-6 text-stone-100 font-instrument">
               Un site web sur mesure, une{" "}
               <span className="text-purple-400/90">présence </span>
               qui inspire
               <span className="text-purple-400/90"> confiance</span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-md text-stone-400 mb-12 mx-auto max-w-[750px]"
-            >
+            <p className="opacity-0 animate-header-slide-up-2 text-md text-stone-400 mb-12 mx-auto max-w-[750px]">
               De la conception à la mise en ligne, nous développons des sites
               web modernes et performants qui correspondent à vos objectifs.
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex flex-col md:flex-row justify-center items-center gap-2 text-stone-500 pt-8 pb-2"
-            >
+            <div className="opacity-0 animate-header-slide-up-3 flex flex-col md:flex-row justify-center items-center gap-2 text-stone-500 pt-8 pb-2">
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-purple-300" />
                 <span className="text-stone-400">Sites Web Sur Mesure</span>
@@ -119,27 +94,21 @@ export default function Home() {
                 <Award className="w-4 h-4 text-purple-300" />
                 <span className="text-stone-400">Développeurs Certifiés</span>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.5,
-                delay: 0.8,
-                type: "spring",
-                stiffness: 200,
-              }}
-            >
+            <div className="opacity-0 animate-header-scale-up">
               <StandaloneShineButton onClick={() => scrollToSection("contact")}>
                 Obtenez votre devis gratuitement
               </StandaloneShineButton>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
       {/* Section Services avec ses spotlights */}
-      <div id="services" className="relative">
+      <div
+        id="services"
+        className="relative animate-slide-up [animation-fill-mode:forwards]"
+      >
         <div className="absolute inset-0">
           <div
             className="absolute left-1/2 -translate-x-1/2 top-48
@@ -158,7 +127,10 @@ export default function Home() {
       </div>
 
       {/* Section Projects avec ses spotlights */}
-      <div id="projects" className="relative">
+      <div
+        id="projects"
+        className="relative animate-slide-up [animation-fill-mode:forwards]"
+      >
         <div className="absolute inset-0">
           <div
             className="absolute left-1/2 -translate-x-1/2 top-90
@@ -175,14 +147,23 @@ export default function Home() {
         </div>
         <Projects />
       </div>
-      <div id="processus" className="relative">
+      <div
+        id="processus"
+        className="relative animate-slide-up [animation-fill-mode:forwards]"
+      >
         <Processus />
       </div>
-      <div>
+      <div
+        id="reviews"
+        className="animate-fade-in [animation-fill-mode:forwards]"
+      >
         <Reviews />
       </div>
       {/* Section FAQ avec ses spotlights */}
-      <div id="faq" className="relative bg-gray-950">
+      <div
+        id="faq"
+        className="relative bg-gray-950 animate-fade-in [animation-fill-mode:forwards]"
+      >
         <div className="absolute inset-0 z-0">
           {/* Spotlight principal - grand et centré */}
           <div
@@ -205,7 +186,10 @@ export default function Home() {
         </div>
       </div>
       {/* Section Contact avec ses spotlights */}
-      <div id="contact" className="relative -mt-1 ">
+      <div
+        id="contact"
+        className="relative -mt-1 animate-slide-up [animation-fill-mode:forwards]"
+      >
         <div className="absolute inset-0 z-0">
           {/* Spotlight principal - forme organique */}
           <div

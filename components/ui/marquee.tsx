@@ -19,11 +19,14 @@ export default function Marquee({
   repeat = 4,
   ...props
 }: MarqueeProps) {
+  const isMobile = window.innerWidth < 768;
+  const duration = isMobile ? "60s" : "40s";
+
   return (
     <div
       {...props}
       className={cn(
-        "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
+        `group flex overflow-hidden p-2 [--duration:${duration}] [--gap:1rem] [gap:var(--gap)]`,
         {
           "flex-row": !vertical,
           "flex-col": vertical,
