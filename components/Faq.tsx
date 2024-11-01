@@ -4,7 +4,7 @@ import AnimatedShinyText from "./ui/animated-shiny-text";
 
 export default function Faq() {
   return (
-    <section className="container mx-auto px-4 py-32 relative">
+    <section className="container mx-auto px-4 py-16 md:py-32 relative">
       <div className="max-w-4xl mx-auto relative">
         {/* En-tête de la section */}
         <div className="text-center mb-8 space-y-4">
@@ -23,7 +23,7 @@ export default function Faq() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-5xl font-semibold text-stone-100 font-instrument"
+            className="text-3xl md:text-5xl font-semibold text-stone-100 font-instrument"
           >
             Tout ce que vous devez savoir
           </motion.h2>
@@ -33,7 +33,7 @@ export default function Faq() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-stone-400 max-w-2xl mx-auto"
+            className="text-sm md:text-base text-stone-400 max-w-2xl mx-auto px-4 md:px-0"
           >
             Découvrez les réponses aux questions les plus courantes sur nos
             services et notre façon de travailler

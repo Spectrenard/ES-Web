@@ -34,7 +34,7 @@ export default function Home() {
       />
 
       <Navbar />
-      <section className="container mx-auto px-4 py-32 relative z-10">
+      <section className="container mx-auto px-4 py-16 md:py-32 relative z-10">
         <div className="absolute inset-0">
           {/* Spotlight principal - centre haut */}
           <div
@@ -62,7 +62,7 @@ export default function Home() {
         </div>
 
         <div className="max-w-4xl mx-auto text-center relative">
-          <div className="py-40 space-y-6">
+          <div className="py-20 md:py-40 space-y-6">
             <Ripple />
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -76,8 +76,8 @@ export default function Home() {
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }} // Réduit la durée
-              className="text-6xl font-semibold mb-6 text-stone-100 font-instrument"
+              transition={{ duration: 0.5 }}
+              className="text-4xl md:text-6xl font-semibold mb-6 text-stone-100 font-instrument"
             >
               Un site web sur mesure, une{" "}
               <span className="text-purple-400/90">présence </span>
@@ -99,16 +99,22 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex justify-center items-center gap-2 text-stone-500 pt-8 pb-2"
+              className="flex flex-col md:flex-row justify-center items-center gap-2 text-stone-500 pt-8 pb-2"
             >
-              <CheckCircle className="w-4 h-4 text-purple-300" />
-              <span className="text-stone-400">Sites Web Sur Mesure</span>
-              <span className="text-stone-600">|</span>
-              <Clock className="w-4 h-4 text-purple-300" />
-              <span className="text-stone-400">Support 24/7</span>
-              <span className="text-stone-600">|</span>
-              <Award className="w-4 h-4 text-purple-300" />
-              <span className="text-stone-400">Développeurs Certifiés</span>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-purple-300" />
+                <span className="text-stone-400">Sites Web Sur Mesure</span>
+              </div>
+              <span className="hidden md:inline text-stone-600">|</span>
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4 text-purple-300" />
+                <span className="text-stone-400">Support 24/7</span>
+              </div>
+              <span className="hidden md:inline text-stone-600">|</span>
+              <div className="flex items-center gap-2">
+                <Award className="w-4 h-4 text-purple-300" />
+                <span className="text-stone-400">Développeurs Certifiés</span>
+              </div>
             </motion.div>
 
             <motion.div

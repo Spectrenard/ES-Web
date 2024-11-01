@@ -56,28 +56,28 @@ const reviews = [
 
 export default function Reviews() {
   return (
-    <section className="py-32 relative">
+    <section className="py-16 md:py-32 relative">
       <div className="absolute inset-0">
         <div
           className="absolute left-1/2 -translate-x-1/2 top-1/4 
-          w-[800px] h-[600px] 
+          w-[300px] md:w-[800px] h-[300px] md:h-[600px] 
           bg-gradient-to-b from-purple-500/20 via-purple-400/10 to-transparent 
-          blur-[120px] rounded-full"
+          blur-[60px] md:blur-[120px] rounded-full"
         />
       </div>
 
       <div className="container mx-auto px-4 relative">
-        <div className="max-w-4xl mx-auto text-center mb-20">
+        <div className="max-w-4xl mx-auto text-center mb-12 md:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 
+            className="inline-flex items-center gap-2 px-3 md:px-4 py-1 md:py-1.5 mb-4 md:mb-6 
             bg-gradient-to-r from-purple-500/10 to-purple-500/20 
             rounded-full border border-purple-500/20"
           >
-            <span className="block w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-            <span className="text-purple-400 text-sm font-medium">
+            <span className="block w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-green-400 animate-pulse"></span>
+            <span className="text-purple-400 text-xs md:text-sm font-medium">
               Avis vérifiés Google
             </span>
           </motion.div>
@@ -86,7 +86,7 @@ export default function Reviews() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-5xl font-semibold mb-8 
+            className="text-3xl md:text-5xl font-semibold mb-6 md:mb-8 
             bg-gradient-to-r from-white via-white to-purple-200 
             bg-clip-text text-transparent"
           >
@@ -97,11 +97,11 @@ export default function Reviews() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex justify-between items-center max-w-xl mx-auto mb-12 
-            p-4 rounded-2xl bg-white/5 border border-white/10"
+            className="flex justify-between items-center max-w-xl mx-auto mb-8 md:mb-12 
+            p-3 md:p-4 rounded-xl md:rounded-2xl bg-white/5 border border-white/10"
           >
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12">
+            <div className="flex items-center gap-2 md:gap-3">
+              <div className="w-8 h-8 md:w-12 md:h-12">
                 <Image
                   src="/assets/google.png"
                   alt="Google Reviews"
@@ -111,16 +111,26 @@ export default function Reviews() {
                 />
               </div>
               <div className="text-left">
-                <div className="text-stone-200 font-medium">Note Google</div>
+                <div className="text-stone-200 text-sm md:text-base font-medium">
+                  Note Google
+                </div>
                 <div className="flex items-center gap-1">
-                  <span className="text-yellow-400">★★★★★</span>
-                  <span className="text-stone-400 text-sm">(5/5)</span>
+                  <span className="text-yellow-400 text-sm md:text-base">
+                    ★★★★★
+                  </span>
+                  <span className="text-stone-400 text-xs md:text-sm">
+                    (5/5)
+                  </span>
                 </div>
               </div>
             </div>
             <div className="text-right">
-              <div className="text-2xl font-bold text-purple-400">100%</div>
-              <div className="text-stone-400 text-sm">de satisfaction</div>
+              <div className="text-xl md:text-2xl font-bold text-purple-400">
+                100%
+              </div>
+              <div className="text-stone-400 text-xs md:text-sm">
+                de satisfaction
+              </div>
             </div>
           </motion.div>
 
@@ -128,7 +138,7 @@ export default function Reviews() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-stone-400 text-lg leading-relaxed max-w-2xl mx-auto"
+            className="text-stone-400 text-sm md:text-lg leading-relaxed max-w-2xl mx-auto"
           >
             Des retours authentiques de clients qui témoignent de leur
             expérience avec notre agence. Chaque avis reflète notre engagement
@@ -137,23 +147,23 @@ export default function Reviews() {
         </div>
 
         <div>
-          <Marquee className="py-4" pauseOnHover>
+          <Marquee className="py-2 md:py-4" pauseOnHover>
             {reviews.map((review, index) => (
               <div
                 key={index}
-                className="mx-4 p-6 relative
+                className="mx-2 md:mx-4 p-4 md:p-6 relative
                   bg-gradient-to-br from-slate-800/50 to-slate-900/50
-                  backdrop-blur-sm rounded-2xl w-[450px]
+                  backdrop-blur-sm rounded-xl md:rounded-2xl w-[280px] md:w-[450px]
                   border border-slate-700/50
                   hover:border-purple-500/30 transition-all duration-500
                   hover:shadow-xl hover:shadow-purple-500/5
                   group"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl md:rounded-2xl" />
 
                 <div className="relative">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 rounded-full overflow-hidden shadow-lg shadow-purple-500/20">
+                  <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full overflow-hidden shadow-lg shadow-purple-500/20">
                       <Image
                         src={review.avatar}
                         alt={`Avatar de ${review.name}`}
@@ -163,22 +173,26 @@ export default function Reviews() {
                       />
                     </div>
                     <div>
-                      <p className="text-purple-400 font-medium text-sm">
+                      <p className="text-purple-400 font-medium text-xs md:text-sm">
                         {review.name}
                       </p>
-                      <p className="text-stone-500 text-xs">{review.company}</p>
+                      <p className="text-stone-500 text-[10px] md:text-xs">
+                        {review.company}
+                      </p>
                     </div>
                   </div>
 
                   <svg
-                    className="w-8 h-8 text-purple-500/20 mb-4"
+                    className="w-6 h-6 md:w-8 md:h-8 text-purple-500/20 mb-3 md:mb-4"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg>
 
-                  <p className="text-stone-300 text-sm ">{review.content}</p>
+                  <p className="text-stone-300 text-xs md:text-sm leading-relaxed">
+                    {review.content}
+                  </p>
                 </div>
               </div>
             ))}

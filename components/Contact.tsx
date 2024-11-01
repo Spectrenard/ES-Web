@@ -4,7 +4,7 @@ import { ArrowRight, CalendarClock, Mail } from "lucide-react";
 
 export default function Contact() {
   return (
-    <div className="container mx-auto px-4 py-32 relative overflow-hidden">
+    <div className="container mx-auto px-4 py-16 md:py-32 relative overflow-hidden">
       {/* Nouveaux spotlights avec des positions et formes différentes */}
 
       <div className="max-w-4xl mx-auto text-center relative">
@@ -26,7 +26,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-5xl font-semibold mb-6 text-stone-100 font-instrument"
+          className="text-3xl md:text-5xl font-semibold mb-4 md:mb-6 text-stone-100 font-instrument"
         >
           Votre <span className="text-purple-300">site sur-mesure</span>, pour
           des résultats concrets
@@ -37,22 +37,22 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-stone-400 mb-12 text-lg"
+          className="text-stone-400 mb-8 md:mb-12 text-base md:text-lg"
         >
           De la création à la mise en ligne, on s'occupe de tout pour vous
-          offrir un site qui attire et retient l’attention.
+          offrir un site qui attire et retient l'attention.
         </motion.p>
 
         <motion.div>
           {/* Card de contact */}
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-12 backdrop-blur-sm max-w-2xl mx-auto">
-            <div className="flex flex-col items-center gap-8">
-              <div className="space-y-6 text-center">
-                <h3 className="text-3xl text-stone-200 font-light">
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-12 backdrop-blur-sm max-w-2xl mx-auto">
+            <div className="flex flex-col items-center gap-6 md:gap-8">
+              <div className="space-y-4 md:space-y-6 text-center">
+                <h3 className="text-2xl md:text-3xl text-stone-200 font-light">
                   Lancez votre projet web avec nous
                 </h3>
-                <div className="space-y-4">
-                  <p className="text-stone-400 text-lg">
+                <div className="space-y-3 md:space-y-4">
+                  <p className="text-xs md:text-lg text-stone-400">
                     Que ce soit pour un site e-commerce, vitrine ou une app web,
                     on maîtrise les dernières technologies pour répondre à vos
                     besoins.
@@ -64,7 +64,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="flex flex-col-reverse sm:flex-row-reverse gap-4 w-full justify-center">
+              <div className="flex flex-col gap-3 w-full sm:flex-row-reverse sm:gap-4 justify-center">
                 <a href="mailto:e.sahinnn61@gmail.com">
                   <StandaloneShineButton
                     icon={
