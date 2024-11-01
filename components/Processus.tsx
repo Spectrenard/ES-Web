@@ -86,7 +86,7 @@ export default function Processus() {
       {/* Spotlight desktop central */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden hidden md:block">
         <div
-          className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
           w-[900px] h-[500px]
           bg-gradient-radial from-purple-500/20 via-purple-400/10 to-transparent 
           blur-[120px] rounded-full"
