@@ -85,7 +85,7 @@ const config = {
         marquee: "marquee var(--duration) infinite linear",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
         "fade-in": "fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
-        "fade-in-up": "fadeInUp 0.6s ease-out",
+        "fade-in-up": "fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "fade-in-up-delayed": "fadeInUp 0.6s ease-out 0.4s",
         "fade-in-scale": "fadeInScale 0.5s ease-out 0.8s",
         "slide-up": "slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
@@ -192,8 +192,14 @@ const config = {
           "100%": { opacity: "1" },
         },
         fadeInUp: {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
+          "0%": {
+            opacity: "0",
+            transform: "translateY(20px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
         },
         fadeInScale: {
           "0%": { opacity: "0", transform: "scale(0.9)" },
