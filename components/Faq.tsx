@@ -8,7 +8,16 @@ export default function Faq() {
   });
 
   return (
-    <section className="container mx-auto px-4 py-16 md:py-32 relative">
+    <section className="container mx-auto px-4 py-16 md:py-32 relative isolate">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div
+          className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2
+          w-[200px] md:w-[600px] h-[300px] md:h-[400px] 
+          bg-gradient-to-b from-purple-500/10 via-purple-400/5 to-transparent 
+          blur-[60px] md:blur-[100px] rounded-full"
+        />
+      </div>
+
       <div className="max-w-4xl mx-auto relative">
         <div
           ref={titleRef}
