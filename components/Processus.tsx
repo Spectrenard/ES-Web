@@ -55,12 +55,20 @@ export default function Processus() {
 
   return (
     <section ref={sectionRef} className="py-16 md:py-32 relative">
-      {/* Spotlight ajusté pour mobile */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Spotlights repositionnés sur les côtés */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Spotlight gauche */}
         <div
-          className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2
-          w-[300px] md:w-[1000px] h-[400px] md:h-[600px] 
-          bg-gradient-to-b from-purple-500/20 via-purple-400/10 to-transparent 
+          className="absolute left-0 top-1/4 
+          w-[300px] md:w-[500px] h-[400px] md:h-[600px] 
+          bg-gradient-to-r from-purple-500/20 via-purple-400/10 to-transparent 
+          blur-[80px] md:blur-[120px] rounded-full"
+        />
+        {/* Spotlight droit */}
+        <div
+          className="absolute right-0 bottom-1/4
+          w-[300px] md:w-[500px] h-[400px] md:h-[600px] 
+          bg-gradient-to-l from-purple-500/20 via-purple-400/10 to-transparent 
           blur-[80px] md:blur-[120px] rounded-full"
         />
       </div>
@@ -130,12 +138,8 @@ export default function Processus() {
               }}
             >
               <div
-                className="absolute z-[-1] inset-0 bg-gradient-to-b from-purple-500/10 to-transparent rounded-xl 
-                opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"
-              />
-              <div
-                className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8
-                transform transition-all duration-300 hover:scale-[1.02]"
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8
+                transform transition-all duration-300 hover:scale-[1.02] hover:bg-white/10"
               >
                 <div className="text-3xl md:text-4xl mb-4">{etape.icon}</div>
                 <div className="flex items-center gap-2 mb-4">
@@ -181,10 +185,6 @@ export default function Processus() {
           </StandaloneShineButton>
         </div>
       </div>
-
-      {/* Spotlights de fond ajustés */}
-      <div className="absolute top-0 left-0 w-24 md:w-32 h-24 md:h-32 bg-purple-500/5 rounded-full blur-2xl md:blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-purple-500/5 rounded-full blur-2xl md:blur-3xl" />
     </section>
   );
 }
