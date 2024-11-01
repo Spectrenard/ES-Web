@@ -11,7 +11,7 @@ export default function Faq() {
     <section className="container mx-auto px-4 py-16 md:py-32 relative isolate">
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
-          className="absolute left-1/2 -translate-x-1/2 
+          className="absolute left-1/2 -translate-x-1/2 z-[-1]
           top-[20%] md:top-1/2 md:-translate-y-1/2
           w-[200px] md:w-[600px] h-[300px] md:h-[400px] 
           bg-gradient-to-b from-purple-500/10 via-purple-400/5 to-transparent 
