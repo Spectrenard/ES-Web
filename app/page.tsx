@@ -38,28 +38,28 @@ export default function Home() {
       <Navbar />
       <section className="container mx-auto py-16 md:py-32 relative z-10">
         <div className="absolute inset-0">
-          {/* Spotlight principal - centre haut */}
+          {/* Spotlight principal - centre haut (gardé mais simplifié sur mobile) */}
           <div
             className="absolute left-1/2 -translate-x-1/2 top-1/4 
-            w-[300px] md:w-[900px] h-[300px] md:h-[600px] 
-            bg-gradient-to-b from-purple-500/30 via-purple-400/20 to-transparent 
-            blur-[80px] md:blur-[140px] rounded-full"
+            w-[200px] md:w-[900px] h-[200px] md:h-[600px] 
+            bg-gradient-to-b from-purple-500/20 md:from-purple-500/30 via-purple-400/10 md:via-purple-400/20 to-transparent 
+            blur-[60px] md:blur-[140px] rounded-full"
           />
 
-          {/* Spotlight gauche */}
+          {/* Spotlight gauche (masqué sur mobile) */}
           <div
-            className="absolute -left-10 md:-left-20 top-1/3 
-            w-[250px] md:w-[500px] h-[250px] md:h-[500px] 
+            className="hidden md:block absolute -left-20 top-1/3 
+            w-[500px] h-[500px] 
             bg-gradient-to-r from-violet-600/20 via-purple-400/30 to-transparent 
-            blur-[70px] md:blur-[130px] rounded-full"
+            blur-[130px] rounded-full"
           />
 
-          {/* Spotlight droit */}
+          {/* Spotlight droit (masqué sur mobile) */}
           <div
-            className="absolute -right-10 md:-right-20 top-1/2 
-            w-[250px] md:w-[500px] h-[250px] md:h-[500px] 
+            className="hidden md:block absolute -right-20 top-1/2 
+            w-[500px] h-[500px] 
             bg-gradient-to-l from-indigo-500/20 via-purple-400/30 to-transparent 
-            blur-[70px] md:blur-[130px] rounded-full"
+            blur-[130px] rounded-full"
           />
         </div>
 
@@ -126,12 +126,12 @@ export default function Home() {
         <div className="absolute inset-0">
           <div
             className="absolute left-1/2 -translate-x-1/2 top-48
-            w-[1200px] h-[600px] 
-            bg-gradient-to-b from-purple-300/30 via-purple-50/20 to-transparent 
-            blur-[90px] rounded-[100%]"
+            w-[300px] md:w-[1200px] h-[300px] md:h-[600px] 
+            bg-gradient-to-b from-purple-300/20 md:from-purple-300/30 via-purple-50/10 md:via-purple-50/20 to-transparent 
+            blur-[60px] md:blur-[90px] rounded-[100%]"
           />
           <div
-            className="absolute -right-20 top-96
+            className="hidden md:block absolute -right-20 top-96
             w-[500px] h-[500px] 
             bg-gradient-to-l from-violet-600/20 via-purple-400/20 to-transparent 
             blur-[130px] rounded-full"
@@ -145,12 +145,12 @@ export default function Home() {
         <div className="absolute inset-0">
           <div
             className="absolute left-1/2 -translate-x-1/2 top-90
-            w-[1200px] h-[800px] 
-            bg-gradient-to-b from-purple-400/25 via-purple-200/15 to-transparent 
-            blur-[100px] rounded-[100%]"
+            w-[300px] md:w-[1200px] h-[400px] md:h-[800px] 
+            bg-gradient-to-b from-purple-400/15 md:from-purple-400/25 via-purple-200/10 md:via-purple-200/15 to-transparent 
+            blur-[60px] md:blur-[100px] rounded-[100%]"
           />
           <div
-            className="absolute -left-20 top-40
+            className="hidden md:block absolute -left-20 top-40
             w-[600px] h-[600px] 
             bg-gradient-to-r from-indigo-500/20 via-purple-400/20 to-transparent 
             blur-[130px] rounded-full"
@@ -169,12 +169,12 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <div
             className="absolute left-1/2 -translate-x-1/2 top-1/4
-            w-[1200px] h-[800px]
-            bg-gradient-to-b from-purple-400/15 via-purple-300/10 to-transparent 
-            blur-[130px] rounded-[60%]"
+            w-[300px] md:w-[1200px] h-[400px] md:h-[800px]
+            bg-gradient-to-b from-purple-400/10 md:from-purple-400/15 via-purple-300/5 md:via-purple-300/10 to-transparent 
+            blur-[60px] md:blur-[130px] rounded-[60%]"
           />
           <div
-            className="absolute -right-20 top-1/3
+            className="hidden md:block absolute -right-20 top-1/3
             w-[500px] h-[800px] rotate-[15deg]
             bg-gradient-to-l from-indigo-500/15 via-purple-400/10 to-transparent 
             blur-[130px]"
@@ -189,12 +189,12 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <div
             className="absolute left-1/2 -translate-x-1/2 top-20
-            w-[900px] h-[700px]
-            bg-gradient-to-b from-purple-500/20 via-purple-400/15 to-transparent 
-            blur-[120px]"
+            w-[300px] md:w-[900px] h-[300px] md:h-[700px]
+            bg-gradient-to-b from-purple-500/15 md:from-purple-500/20 via-purple-400/10 md:via-purple-400/15 to-transparent 
+            blur-[60px] md:blur-[120px]"
           />
           <div
-            className="absolute -left-20 bottom-0
+            className="hidden md:block absolute -left-20 bottom-0
             w-[500px] h-[500px] rotate-12
             bg-gradient-to-r from-indigo-500/15 via-slate-400/15 to-transparent 
             blur-[100px]"
