@@ -29,12 +29,12 @@ export default function Home() {
       id="header"
       className="bg-gray-950 min-h-screen overflow-x-hidden relative overflow-fix"
     >
-      {/* <Particles
+      <Particles
         className="absolute inset-0 z-19 pointer-events-none"
         quantity={100}
         staticity={50}
         color="#64748b"
-      /> */}
+      />
       <Navbar />
       <section className="container mx-auto py-16 lg:py-32 relative z-10">
         {/* Spotlight principal (Ellipse 2) */}
