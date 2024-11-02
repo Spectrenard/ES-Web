@@ -12,6 +12,7 @@ import Faq from "@/components/Faq";
 import Reviews from "@/components/Reviews";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 export default function Home() {
   const scrollToSection = (id: string) => {
@@ -37,6 +38,37 @@ export default function Home() {
 
       <Navbar />
       <section className="container mx-auto py-16 md:py-32 relative z-10">
+        {/* Spotlight principal (Ellipse 2) */}
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/assets/spotlights/Ellipse 2.png"
+            alt=""
+            fill
+            className="object-contain opacity-50 max-md:scale-[1.5]"
+            priority
+          />
+        </div>
+
+        {/* Spotlight gauche (Ellipse 5) */}
+        <div className="absolute right-1/4 bottom-1/4  w-full h-full -z-10">
+          <Image
+            src="/assets/spotlights/Ellipse 7.png"
+            alt=""
+            fill
+            className="object-contain  opacity-40 max-md:scale-[1.5]"
+          />
+        </div>
+
+        {/* Spotlight foncé (Ellipse 7) */}
+        <div className="absolute left-1/4 top-1/3 w-full h-full -z-10">
+          <Image
+            src="/assets/spotlights/Ellipse 7.png"
+            alt=""
+            fill
+            className="object-contain opacity-70 max-md:scale-[2]"
+          />
+        </div>
+
         <div className="max-w-4xl mx-auto text-center relative max-sm:pt-20">
           <div className="py-20 md:py-40 space-y-6">
             <Ripple />
@@ -97,30 +129,133 @@ export default function Home() {
       </section>
       {/* Section Services */}
       <div id="services" className="relative">
+        <div className="absolute top-0 left-0 right-0 bottom-0">
+          <Image
+            src="/assets/spotlights/Ellipse 9 (2).png"
+            alt=""
+            fill
+            className="max-md:-translate-y-48 max-sm:-translate-x-1/2 max-sm:opacity-65"
+          />
+        </div>
+        <div className="absolute top-72 left-2/3 right-0 bottom-0">
+          <Image
+            src="/assets/spotlights/Ellipse 7.png"
+            alt=""
+            fill
+            className=" opacity-90 md:opacity-40  scale-[1.4]  max-sm:translate-x-1/2 max-sm:translate-y-48"
+          />
+        </div>
         <Services />
       </div>
 
       {/* Section Projects */}
       <div id="projects" className="relative">
+        <div className="absolute top-0 left-0 right-0 bottom-0">
+          <Image
+            src="/assets/spotlights/Ellipse 7.png"
+            alt=""
+            fill
+            className="object-contain opacity-85 -translate-x-1/4"
+            sizes="100vw"
+          />
+        </div>
+        <div className="absolute top-10 left-0 right-0 bottom-0">
+          <Image
+            src="/assets/spotlights/Ellipse 9.png"
+            alt=""
+            fill
+            className="object-contain opacity-65 translate-x-1/6 -translate-y-1/4"
+            sizes="100vw"
+          />
+        </div>
         <Projects />
       </div>
+
+      {/* Section Processus */}
       <div id="processus" className="relative">
+        <div className="absolute top-0 left-0 right-0 bottom-0">
+          <Image
+            src="/assets/spotlights/Ellipse 8.png"
+            alt=""
+            fill
+            className="object-contain max-sm:opacity-0"
+          />
+        </div>
         <Processus />
       </div>
-      <div>
+
+      {/* Section Reviews */}
+      <div id="reviews" className="relative">
+        <div className="absolute top-0 left-0 right-0 bottom-0">
+          <Image
+            src="/assets/spotlights/Ellipse 8.png"
+            alt=""
+            fill
+            className="object-contain max-md:scale-[1.9]"
+          />
+        </div>
+
         <Reviews />
       </div>
+
       {/* Section FAQ */}
-      <div id="faq" className="relative bg-gray-950">
+      <div id="faq" className="relative">
+        {/* Container pour les spotlights avec z-index négatif */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-96 right-0 bottom-0">
+            <Image
+              src="/assets/spotlights/Ellipse 3.png"
+              alt=""
+              fill
+              className="object-contain opacity-85 max-sm:scale-[15]"
+              priority
+            />
+          </div>
+          <div className="absolute -top-80 right-96 left-0 bottom-0">
+            <Image
+              src="/assets/spotlights/Ellipse 7.png"
+              alt=""
+              fill
+              className="object-contain opacity-70 max-sm:scale-[15]"
+              priority
+            />
+          </div>
+        </div>
+        {/* Contenu FAQ avec z-index positif */}
         <div className="relative z-10">
           <Faq />
         </div>
       </div>
+
       {/* Section Contact */}
-      <div id="contact" className="relative -mt-1">
-        <div className="relative z-10">
-          <Contact />
+      <div id="contact" className="relative">
+        <div className="absolute top-0 left-1/2 right-0 bottom-0">
+          <Image
+            src="/assets/spotlights/Ellipse 3.png"
+            alt=""
+            fill
+            className="object-contain  opacity-65 max-sm:scale-[1.9]"
+          />
         </div>
+
+        <div className="absolute -top-56 left-0 right-0 bottom-0">
+          <Image
+            src="/assets/spotlights/Ellipse 2.png"
+            alt=""
+            fill
+            className="object-contain opacity-30  max-sm:scale-[1.9]"
+          />
+        </div>
+
+        <div className="absolute top-0 left-0 right-0 bottom-0">
+          <Image
+            src="/assets/spotlights/Ellipse 9.png"
+            alt=""
+            fill
+            className="object-contain opacity-45 -translate-x-2/4  max-sm:scale-[1.9]"
+          />
+        </div>
+        <Contact />
       </div>
       <Footer />
     </div>
