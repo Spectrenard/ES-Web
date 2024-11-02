@@ -25,10 +25,7 @@ export default function Home() {
     }
   };
   return (
-    <div
-      id="header"
-      className="bg-gray-950 min-h-svh relative overflow-x-hidden"
-    >
+    <div id="header" className="bg-gray-950 min-h-svh overflow-x-hidden">
       {/* <Particles
         className="absolute inset-0 z-19 pointer-events-none"
         quantity={100}
@@ -200,8 +197,8 @@ export default function Home() {
 
       {/* Section FAQ */}
       <div id="faq" className="relative">
-        {/* Container pour les spotlights avec z-index négatif */}
-        <div className="absolute inset-0 pointer-events-none">
+        {/* Container pour les spotlights */}
+        <div className="absolute inset-0 pointer-events-none h-full">
           <div className="absolute top-0 left-96 right-0 bottom-0">
             <Image
               src="/assets/spotlights/Ellipse 3.png"
@@ -221,10 +218,7 @@ export default function Home() {
             />
           </div>
         </div>
-        {/* Contenu FAQ avec z-index positif */}
-        <div className="relative z-10">
-          <Faq />
-        </div>
+        <Faq />
       </div>
 
       {/* Section Contact */}
