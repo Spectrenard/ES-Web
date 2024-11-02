@@ -82,3 +82,11 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .overflow-fix {
+    overflow-anchor: none;
+    overscroll-behavior-y: none;
+    -webkit-overflow-scrolling: touch;
+  }
+}

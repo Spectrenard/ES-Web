@@ -25,7 +25,10 @@ export default function Home() {
     }
   };
   return (
-    <div id="header" className="bg-gray-950 min-h-svh overflow-x-hidden">
+    <div
+      id="header"
+      className="bg-gray-950 min-h-screen overflow-x-hidden relative overflow-fix"
+    >
       {/* <Particles
         className="absolute inset-0 z-19 pointer-events-none"
         quantity={100}
@@ -36,7 +39,7 @@ export default function Home() {
       <Navbar />
       <section className="container mx-auto py-16 md:py-32 relative z-10">
         {/* Spotlight principal (Ellipse 2) */}
-        <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 -z-10 h-full">
           <Image
             src="/assets/spotlights/Ellipse 2.png"
             alt=""
