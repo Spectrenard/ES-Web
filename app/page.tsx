@@ -35,7 +35,6 @@ export default function Home() {
         staticity={50}
         color="#64748b"
       /> */}
-
       <Navbar />
       <section className="container mx-auto py-16 md:py-32 relative z-10">
         {/* Spotlight principal (Ellipse 2) */}
@@ -147,7 +146,6 @@ export default function Home() {
         </div>
         <Services />
       </div>
-
       {/* Section Projects */}
       <div id="projects" className="relative">
         <div className="absolute top-0 left-0 right-0 bottom-0">
@@ -170,7 +168,6 @@ export default function Home() {
         </div>
         <Projects />
       </div>
-
       {/* Section Processus */}
       <div id="processus" className="relative">
         <div className="absolute top-0 left-0 right-0 bottom-0">
@@ -183,7 +180,6 @@ export default function Home() {
         </div>
         <Processus />
       </div>
-
       {/* Section Reviews */}
       <div id="reviews" className="relative">
         <div className="absolute top-0 left-0 right-0 bottom-0">
@@ -197,59 +193,56 @@ export default function Home() {
 
         <Reviews />
       </div>
-
       {/* Section FAQ */}
       <div id="faq" className="relative">
-        {/* Container pour les spotlights */}
-        <div className="absolute inset-0 pointer-events-none h-full">
-          <div className="absolute top-0 left-96 right-0 bottom-0">
-            <Image
-              src="/assets/spotlights/Ellipse 3.png"
-              alt=""
-              fill
-              className="object-contain opacity-85 max-sm:scale-[15]"
-              priority
-            />
-          </div>
-          <div className="absolute -top-80 right-96 left-0 bottom-0">
-            <Image
-              src="/assets/spotlights/Ellipse 7.png"
-              alt=""
-              fill
-              className="object-contain opacity-70 max-sm:scale-[15]"
-              priority
-            />
-          </div>
-        </div>
-        <Faq />
-      </div>
-
-      {/* Section Contact */}
-      <div id="contact" className="relative">
-        <div className="absolute top-0 left-1/2 right-0 bottom-0">
+        {/* Images de fond avec z-index négatif */}
+        <div className="absolute top-0 left-96 right-0 bottom-0 max-sm:-left-1/2 max-sm:-right-[2%] -z-1">
           <Image
             src="/assets/spotlights/Ellipse 3.png"
             alt=""
             fill
-            className="object-contain  opacity-65 max-sm:scale-[1.9]"
+            className="object-contain opacity-85"
+            sizes="100vw"
           />
         </div>
-
-        <div className="absolute -top-56 left-0 right-0 bottom-0">
+        <div className="absolute -top-80 right-96 left-0 bottom-0 max-sm:-right-1/2 max-sm:left-1/4 -z-1">
+          <Image
+            src="/assets/spotlights/Ellipse 7.png"
+            alt=""
+            fill
+            className="object-contain opacity-70"
+            sizes="100vw"
+          />
+        </div>
+        {/* Composant FAQ avec z-index positif */}
+        <div className="relative z-10">
+          <Faq />
+        </div>
+      </div>
+      {/* Section Contact */}
+      <div id="contact" className="relative">
+        <div className="absolute top-0 left-1/2 right-0 bottom-0 max-sm:-left-1/4 max-sm:-right-1/4">
+          <Image
+            src="/assets/spotlights/Ellipse 3.png"
+            alt=""
+            fill
+            className="object-contain opacity-65"
+          />
+        </div>
+        <div className="absolute -top-56 left-0 right-0 bottom-0 max-sm:-left-1/2 max-sm:-right-1/2">
           <Image
             src="/assets/spotlights/Ellipse 2.png"
             alt=""
             fill
-            className="object-contain opacity-30  max-sm:scale-[1.9]"
+            className="object-contain opacity-30"
           />
         </div>
-
-        <div className="absolute top-0 left-0 right-0 bottom-0">
+        <div className="absolute top-0 left-0 right-0 bottom-0 max-sm:-left-1/2 max-sm:-right-1/2">
           <Image
             src="/assets/spotlights/Ellipse 9.png"
             alt=""
             fill
-            className="object-contain opacity-45 -translate-x-2/4  max-sm:scale-[1.9]"
+            className="object-contain opacity-45 -translate-x-2/4"
           />
         </div>
         <Contact />
