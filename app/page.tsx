@@ -36,7 +36,7 @@ export default function Home() {
         color="#64748b"
       /> */}
       <Navbar />
-      <section className="container mx-auto py-16 md:py-32 relative z-10">
+      <section className="container mx-auto py-16 lg:py-32 relative z-10">
         {/* Spotlight principal (Ellipse 2) */}
         <div className="absolute inset-0 -z-10 h-full">
           <Image
@@ -69,7 +69,7 @@ export default function Home() {
         </div>
 
         <div className="max-w-4xl mx-auto text-center relative max-sm:pt-20">
-          <div className="py-20 md:py-40 space-y-6">
+          <div className="py-12 xl:py-28 2xl:py-40 space-y-6">
             <Ripple />
             <div className="inline-block px-4 py-1 bg-white/5 rounded-full border border-white/10 opacity-0 animate-[bounceIn_0.6s_cubic-bezier(0.22,1,0.36,1)_forwards]">
               <AnimatedShinyText>✨ Réponse en 24h</AnimatedShinyText>
