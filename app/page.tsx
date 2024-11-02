@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 import Services from "@/components/Services";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { StandaloneShineButton } from "@/components/ui/cta";
-import Particles from "@/components/ui/particles";
 import { CheckCircle, Clock, Award } from "lucide-react";
 import Ripple from "@/components/ui/ripple";
 import Projects from "@/components/Projects";
@@ -29,12 +28,6 @@ export default function Home() {
       id="header"
       className="bg-gray-950 min-h-screen overflow-x-hidden relative overflow-fix"
     >
-      <Particles
-        className="absolute inset-0 z-19 pointer-events-none"
-        quantity={100}
-        staticity={50}
-        color="#64748b"
-      />
       <Navbar />
       <section className="container mx-auto py-16 lg:py-32 relative z-10">
         {/* Spotlight principal (Ellipse 2) */}
