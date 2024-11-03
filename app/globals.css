@@ -6,6 +6,13 @@
 
 body {
   font-family: "Inter", system-ui, sans-serif;
+  background-color: rgb(3, 7, 18);
+  overscroll-behavior-y: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+html {
+  background-color: rgb(3, 7, 18);
 }
 
 @layer base {
