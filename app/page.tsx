@@ -198,7 +198,7 @@ export default function Home() {
             sizes="100vw"
           />
         </div>
-        <div className="absolute -top-80 right-96 left-0 bottom-0 max-sm:-right-1/2 max-sm:left-1/4 -z-1">
+        <div className="absolute -top-80 right-96 left-0 bottom-0 max-sm:-right-1/2 max-sm:left-1/4 -z-1 pointer-events-none">
           <Image
             src="/assets/spotlights/Ellipse 7.png"
             alt=""
