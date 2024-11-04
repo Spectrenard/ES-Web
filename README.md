@@ -32,19 +32,8 @@ Création d'une landing page moderne et épuré avec des animations minimalistes
 - Animations optimisées
 
 🚀 **Installation**
-1. Clonez le repository :
-   ```bash
-   git clone https://github.com/ton_nom_utilisateur/es-web.git
-Accédez au dossier du projet :
-bash
-Copier le code
-cd es-web
-Installez les dépendances :
-bash
-Copier le code
-npm install
-Lancez le serveur de développement :
-bash
-Copier le code
-npm run dev
+1. Clonez le dépôt : `git clone https://github.com/ton_nom_utilisateur/es-web.git`
+2. Accédez au dossier du projet : `cd mon-projet`
+3. Installez les dépendances : `npm install`
+4. Lancez le serveur de développement : `npm run dev`
 Ouvrez votre navigateur et allez à http://localhost:3000 pour voir l'application en action !
