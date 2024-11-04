@@ -1,5 +1,5 @@
-import AccordionExample from "./ui/Accordion";
-import AnimatedShinyText from "./ui/animated-shiny-text";
+import AccordionExample from "../ui/Accordion";
+import AnimatedShinyText from "../ui/animated-shiny-text";
 import { useResponsiveInView } from "@/hooks/useResponsiveInView";
 
 export default function Faq() {

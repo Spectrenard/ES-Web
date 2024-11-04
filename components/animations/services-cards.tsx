@@ -1,12 +1,11 @@
-"use client";
-
-import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
-import { Bolt, BarChart3, Boxes, Sparkles } from "lucide-react";
-import { cn } from "@/lib/utils";
-
 import { useResponsiveInView } from "@/hooks/useResponsiveInView";
 import type { CSSProperties } from "react";
 
+interface StatItem {
+  label: string;
+  value: string;
+  trend: string;
+}
 interface StatItem {
   label: string;
   value: string;
@@ -19,43 +18,43 @@ interface ChartStyle extends CSSProperties {
 }
 
 // Animation de code défilant pour Sites Web Performants
-const CodeAnimation = () => {
+export const CodeAnimation = () => {
   const [ref, isInView] = useResponsiveInView<HTMLDivElement>();
 
   const codeContent = `// Optimisation des performances
-import { lazy, Suspense } from 'react';
-import { optimizeImages } from './utils';
-// Chargement différé des composants
-const HeavyComponent = lazy(() => import('./Heavy'));
-// Configuration du cache
-const cacheConfig = {
-  strategy: 'stale-while-revalidate',
-  maxAge: 60 * 60 * 24,
-};
-// Optimisation des images
-const images = await optimizeImages({
-  quality: 80,
-  formats: ['webp', 'avif'],
-});
-// Mise en cache des API
-const cache = new Cache(cacheConfig);
-const data = await cache.fetch('/api/data');
-// Préchargement des ressources
-<link rel="preload" href="font.woff2" />;
-<link rel="preconnect" href="https://api.example.com" />;
-// Optimisation des CSS
-const criticalCSS = extractCritical(App);
-const styles = optimizeCSS(criticalCSS);
-// Compression Gzip/Brotli
-app.use(compression({ level: 9 }));
-// Service Worker pour le offline
-registerServiceWorker('./sw.js');
-// Métriques de performance
-measureWebVitals({
-  CLS: 0.1,  // Cumulative Layout Shift
-  FID: 100,  // First Input Delay
-  LCP: 2.5,  // Largest Contentful Paint
-});`;
+  import { lazy, Suspense } from 'react';
+  import { optimizeImages } from './utils';
+  // Chargement différé des composants
+  const HeavyComponent = lazy(() => import('./Heavy'));
+  // Configuration du cache
+  const cacheConfig = {
+    strategy: 'stale-while-revalidate',
+    maxAge: 60 * 60 * 24,
+  };
+  // Optimisation des images
+  const images = await optimizeImages({
+    quality: 80,
+    formats: ['webp', 'avif'],
+  });
+  // Mise en cache des API
+  const cache = new Cache(cacheConfig);
+  const data = await cache.fetch('/api/data');
+  // Préchargement des ressources
+  <link rel="preload" href="font.woff2" />;
+  <link rel="preconnect" href="https://api.example.com" />;
+  // Optimisation des CSS
+  const criticalCSS = extractCritical(App);
+  const styles = optimizeCSS(criticalCSS);
+  // Compression Gzip/Brotli
+  app.use(compression({ level: 9 }));
+  // Service Worker pour le offline
+  registerServiceWorker('./sw.js');
+  // Métriques de performance
+  measureWebVitals({
+    CLS: 0.1,  // Cumulative Layout Shift
+    FID: 100,  // First Input Delay
+    LCP: 2.5,  // Largest Contentful Paint
+  });`;
 
   return (
     <div
@@ -76,7 +75,7 @@ measureWebVitals({
 };
 
 // Dashboard minimaliste pour SEO & Analytics
-const AnalyticsDashboard = () => {
+export const AnalyticsDashboard = () => {
   const [ref, isInView] = useResponsiveInView<HTMLDivElement>();
 
   const stats: StatItem[] = [
@@ -167,7 +166,7 @@ const AnalyticsDashboard = () => {
 };
 
 // Animation pour Applications Web
-const WebAppAnimation = () => {
+export const WebAppAnimation = () => {
   const [ref, isInView] = useResponsiveInView<HTMLDivElement>();
 
   return (
@@ -204,7 +203,7 @@ const WebAppAnimation = () => {
 };
 
 // Grille de design avec motifs
-const DesignPatterns = () => {
+export const DesignPatterns = () => {
   const [ref, isInView] = useResponsiveInView<HTMLDivElement>();
 
   return (
@@ -226,76 +225,3 @@ const DesignPatterns = () => {
     </div>
   );
 };
-
-const items = [
-  {
-    title: "Design UI/UX",
-    description:
-      "Interfaces modernes et intuitives qui captivent vos utilisateurs.",
-    header: <DesignPatterns />,
-    icon: <Sparkles className="h-4 w-4 text-purple-300" />,
-  },
-  {
-    title: "Sites/Applications Web",
-    description: "Solutions sur mesure adaptées à vos besoins spécifiques.",
-    header: <WebAppAnimation />,
-    icon: <Boxes className="h-4 w-4 text-purple-300" />,
-  },
-  {
-    title: "Optimisation SEO",
-    description:
-      "Visibilité optimale de votre site sur Google et autres moteurs de recherche.",
-    header: <AnalyticsDashboard />,
-    icon: <BarChart3 className="h-4 w-4 text-purple-300" />,
-  },
-  {
-    title: "Performance Web",
-    description:
-      "Sites web ultra-rapides et optimisés pour une expérience fluide.",
-    header: <CodeAnimation />,
-    icon: <Bolt className="h-4 w-4 text-purple-300" />,
-  },
-];
-
-export default function Services() {
-  const [ref, isInView] = useResponsiveInView<HTMLDivElement>();
-
-  return (
-    <div
-      ref={ref}
-      className="relative w-full min-h-screen px-2 md:px-4 py-12 md:py-20 overflow-hidden"
-    >
-      <div className="relative z-10">
-        <div className="flex items-center justify-center max-w-7xl mx-auto w-full gap-2 md:gap-4 mb-8 md:mb-16">
-          <div className="h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-gray-300 flex-grow" />
-          <h2 className="text-2xl md:text-4xl font-instrument text-gray-90 font-bold">
-            Que fait-on ?
-          </h2>
-          <div className="h-[1px] bg-gradient-to-l from-transparent via-gray-300 to-gray-300 flex-grow" />
-        </div>
-
-        <BentoGrid className="max-w-4xl mx-auto">
-          {items.map((item, i) => (
-            <BentoGridItem
-              key={i}
-              title={item.title}
-              description={item.description}
-              header={item.header}
-              icon={item.icon}
-              className={cn(
-                "transition-all duration-300 hover:scale-[1.02]",
-                "bg-[#1A1614]/40 backdrop-blur-sm border",
-                "hover:bg-[#1A2B3C]/80 hover:border-purple-400/20 hover:shadow-lg",
-                "hover:shadow-purple-500/5",
-                {
-                  "md:col-span-2": i === 1 || i === 2,
-                  "col-span-1": true,
-                }
-              )}
-            />
-          ))}
-        </BentoGrid>
-      </div>
-    </div>
-  );
-}

@@ -1,4 +1,4 @@
-import { StandaloneShineButton } from "./ui/cta";
+import { StandaloneShineButton } from "../ui/cta";
 import { ArrowRight, CalendarClock, Mail } from "lucide-react";
 import { useResponsiveInView } from "@/hooks/useResponsiveInView";
 

@@ -16,8 +16,14 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "ES Web",
-  description: "ES Web - Votre description",
+  title: "ES Web - Développement Web Sur Mesure",
+  description:
+    "Création de sites web professionnels et applications web sur mesure",
+  keywords: "développement web, site internet, application web",
+  openGraph: {
+    title: "ES Web",
+    description: "Création de sites web professionnels",
+  },
 };
 
 export default function RootLayout({

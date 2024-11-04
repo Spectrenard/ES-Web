@@ -1,17 +1,17 @@
 "use client";
-import Navbar from "@/components/Navbar";
-import Services from "@/components/Services";
-import AnimatedShinyText from "@/components/ui/animated-shiny-text";
-import { StandaloneShineButton } from "@/components/ui/cta";
-import { CheckCircle, Clock, Award } from "lucide-react";
-import Ripple from "@/components/ui/ripple";
-import Projects from "@/components/Projects";
-import Processus from "@/components/Processus";
-import Faq from "@/components/Faq";
-import Reviews from "@/components/Reviews";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
 import Image from "next/image";
+import { CheckCircle, Clock, Award } from "lucide-react";
+import Navbar from "@/components/layouts/Navbar";
+import Services from "@/components/layouts/Services";
+import Projects from "@/components/layouts/Projects";
+import Processus from "@/components/layouts/Processus";
+import Reviews from "@/components/layouts//Reviews";
+import Faq from "@/components/layouts/Faq";
+import Contact from "@/components/layouts/Contact";
+import Footer from "@/components/layouts/Footer";
+import Ripple from "@/components/ui/ripple";
+import { StandaloneShineButton } from "@/components/ui/cta";
+import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 
 export default function Home() {
   const scrollToSection = (id: string) => {
