@@ -3,7 +3,7 @@
 ![Logo ES Web](public/assets/svg/logo.svg)
 
 🌟 **À propos**
-Création d'une landing page moderne et épuré avec des animations minimalistes pour l'agence ES Web
+- Création d'une landing page moderne et épuré avec des animations minimalistes pour l'agence ES Web
 
 ✨ **Fonctionnalités**
 - Design UI/UX moderne et responsive
