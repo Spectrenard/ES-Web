@@ -32,7 +32,7 @@ Création d'une landing page moderne et épuré avec des animations minimalistes
 - Animations optimisées
 
 🚀 **Installation**
-1. Clonez le dépôt : `git clone https://github.com/ton_nom_utilisateur/es-web.git`
+1. Clonez le dépôt : `https://github.com/Spectrenard/ES-Web.git`
 2. Accédez au dossier du projet : `cd mon-projet`
 3. Installez les dépendances : `npm install`
 4. Lancez le serveur de développement : `npm run dev`
