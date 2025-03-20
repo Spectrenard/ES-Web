@@ -78,7 +78,7 @@ export default function Reviews() {
           </div>
 
           <h2
-            className={`text-3xl md:text-5xl px-4 font-semibold mb-6 md:mb-8 
+            className={`text-3xl md:text-5xl px-4 font-semibold font-syne mb-6 md:mb-8 
               bg-gradient-to-r from-white via-white to-purple-200 
               bg-clip-text text-transparent
               opacity-0 ${isInView ? "animate-fade-in-up" : ""}`}

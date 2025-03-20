@@ -101,7 +101,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
         </h2>
         <motion.div
           animate={{ rotate: isExpanded ? 180 : 0 }}
-          className="text-purple-400 ml-4 flex-shrink-0"
+          className="text-white ml-4 flex-shrink-0"
         >
           <ChevronDown size={20} />
         </motion.div>

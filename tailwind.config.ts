@@ -24,6 +24,7 @@ const config = {
       fontFamily: {
         sans: ["var(--font-inter)"],
         instrument: ["var(--font-instrument_sans)"],
+        syne: ["var(--font-syne)", "sans-serif"],
       },
       colors: {
         background: "hsl(var(--background))",

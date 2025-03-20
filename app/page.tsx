@@ -68,7 +68,7 @@ export default function Home() {
               <AnimatedShinyText>✨ Réponse en 24h</AnimatedShinyText>
             </div>
 
-            <h1 className="text-3xl md:text-6xl font-semibold mb-6 text-stone-100 font-instrument">
+            <h1 className="text-3xl md:text-6xl font-semibold mb-6 text-stone-100 font-syne">
               <span className="block opacity-0 animate-header-slide-up-1 px-4">
                 Un site web sur mesure,
               </span>{" "}
@@ -138,28 +138,6 @@ export default function Home() {
           />
         </div>
         <Services />
-      </div>
-      {/* Section Projects */}
-      <div id="projects" className="relative">
-        <div className="absolute top-0 left-0 right-0 bottom-0">
-          <Image
-            src="/assets/spotlights/Ellipse 7.png"
-            alt=""
-            fill
-            className="object-contain opacity-85 -translate-x-1/4"
-            sizes="100vw"
-          />
-        </div>
-        <div className="absolute top-10 left-0 right-0 bottom-0">
-          <Image
-            src="/assets/spotlights/Ellipse 9.png"
-            alt=""
-            fill
-            className="object-contain opacity-65 translate-x-1/6 -translate-y-1/4"
-            sizes="100vw"
-          />
-        </div>
-        <Projects />
       </div>
       {/* Section Processus */}
       <div id="processus" className="relative">

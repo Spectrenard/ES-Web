@@ -267,11 +267,9 @@ export default function Services() {
     >
       <div className="relative z-10">
         <div className="flex items-center justify-center max-w-7xl mx-auto w-full gap-2 md:gap-4 mb-8 md:mb-16">
-          <div className="h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-gray-300 flex-grow" />
-          <h2 className="text-2xl md:text-4xl font-instrument text-gray-90 font-bold">
+          <h2 className="text-2xl md:text-5xl font-syne font-bold">
             Que fait-on ?
           </h2>
-          <div className="h-[1px] bg-gradient-to-l from-transparent via-gray-300 to-gray-300 flex-grow" />
         </div>
 
         <BentoGrid className="max-w-4xl mx-auto">

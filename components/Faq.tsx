@@ -20,7 +20,7 @@ export default function Faq() {
             <AnimatedShinyText>Questions Fréquentes</AnimatedShinyText>
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-semibold text-stone-100 font-instrument">
+          <h2 className="text-3xl md:text-5xl font-semibold text-stone-100 font-syne">
             Tout ce que vous devez savoir
           </h2>
 

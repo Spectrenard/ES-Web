@@ -67,7 +67,7 @@ export default function Processus() {
             </span>
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 text-stone-100 font-instrument">
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 text-stone-100 font-syne">
             Notre Processus de
             <span className="text-purple-400/90"> Réalisation</span>
           </h2>

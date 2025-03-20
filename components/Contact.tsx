@@ -25,7 +25,7 @@ export default function Contact() {
         </div>
 
         <h2
-          className={`text-3xl md:text-5xl font-semibold mb-4 md:mb-6 text-stone-100 font-instrument
+          className={`text-3xl md:text-5xl font-semibold mb-4 md:mb-6 text-stone-100 font-syne
             opacity-0 ${isInView ? "animate-fade-in-up" : ""}`}
           style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}
         >

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { Instrument_Sans, Inter } from "next/font/google"; // Import des polices
+import { Inter } from "next/font/google";
+import { Instrument_Sans } from "next/font/google";
+import { Syne } from "next/font/google";
 import "./globals.css";
 
 // Configuration de Inter
@@ -15,6 +17,13 @@ const instrumentSans = Instrument_Sans({
   variable: "--font-instrument_sans",
 });
 
+// Configuration de Syne
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-syne",
+});
+
 export const metadata: Metadata = {
   title: "ES Web",
   description: "ES Web - Votre description",
@@ -28,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className="dark">
       <body
-        className={`${inter.variable} ${instrumentSans.variable} font-sans  overflow-x-hidden`}
+        className={`${inter.variable} ${instrumentSans.variable} ${syne.variable} font-sans  overflow-x-hidden`}
       >
         {children}
       </body>
