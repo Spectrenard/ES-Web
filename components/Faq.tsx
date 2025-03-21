@@ -16,15 +16,17 @@ export default function Faq() {
             titleInView ? "animate-fade-in-up" : ""
           }`}
         >
-          <div className="inline-block px-4 py-1 bg-white/5 rounded-full border border-white/10">
-            <AnimatedShinyText>Questions Fréquentes</AnimatedShinyText>
+          <div className="inline-block px-4 py-1 bg-sky-100 rounded-full border border-sky-200">
+            <AnimatedShinyText className="text-sky-700">
+              Questions Fréquentes
+            </AnimatedShinyText>
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-semibold text-stone-100 font-syne">
+          <h2 className="text-3xl md:text-5xl font-semibold text-slate-800 font-syne">
             Tout ce que vous devez savoir
           </h2>
 
-          <p className="text-sm md:text-base text-stone-400 max-w-2xl mx-auto px-4 md:px-0">
+          <p className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto px-4 md:px-0">
             Découvrez les réponses aux questions les plus courantes sur nos
             services et notre façon de travailler
           </p>

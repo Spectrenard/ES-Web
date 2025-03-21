@@ -62,17 +62,17 @@ export default function Processus() {
           }`}
         >
           <div className="flex justify-center mb-4 md:mb-6">
-            <span className="px-4 py-1 bg-white/10 rounded-full text-white/50 text-xs md:text-sm border border-white/20">
+            <span className="px-4 py-1 bg-sky-100 rounded-full text-sky-700 text-xs md:text-sm border border-sky-200">
               Notre méthode
             </span>
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 text-stone-100 font-syne">
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-4 text-slate-800 font-syne">
             Notre Processus de
-            <span className="text-purple-400/90"> Réalisation</span>
+            <span className="text-sky-600"> Réalisation</span>
           </h2>
 
-          <p className="text-stone-400 text-center max-w-2xl mx-auto text-sm md:text-base">
+          <p className="text-slate-600 text-center max-w-2xl mx-auto text-sm md:text-base">
             Une approche méthodique et transparente pour transformer votre
             vision en réalité
           </p>
@@ -86,20 +86,26 @@ export default function Processus() {
             }`}
           >
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold">10+</div>
-              <div className="text-xs md:text-sm text-stone-400">
+              <div className="text-2xl md:text-3xl font-bold text-sky-800">
+                10+
+              </div>
+              <div className="text-xs md:text-sm text-slate-500">
                 Projets Réalisés
               </div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold">97%</div>
-              <div className="text-xs md:text-sm text-stone-400">
+              <div className="text-2xl md:text-3xl font-bold text-sky-800">
+                97%
+              </div>
+              <div className="text-xs md:text-sm text-slate-500">
                 Clients Satisfaits
               </div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold">3-7</div>
-              <div className="text-xs md:text-sm text-stone-400">
+              <div className="text-2xl md:text-3xl font-bold text-sky-800">
+                3-7
+              </div>
+              <div className="text-xs md:text-sm text-slate-500">
                 Semaines en Moyenne
               </div>
             </div>
@@ -120,29 +126,29 @@ export default function Processus() {
               }}
             >
               <div
-                className="absolute z-[-1] inset-0 bg-gradient-to-b from-purple-500/10 to-transparent rounded-xl 
+                className="absolute z-[-1] inset-0 bg-gradient-to-b from-sky-100 to-transparent rounded-xl 
                 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"
               />
               <div
-                className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8
-                transform transition-all duration-300 hover:scale-[1.02]"
+                className="relative bg-white border border-slate-200 rounded-xl p-6 md:p-8
+                transform transition-all duration-300 hover:scale-[1.02] shadow-sm hover:shadow-md hover:shadow-sky-100/50"
               >
                 <div className="text-3xl md:text-4xl mb-4">{etape.icon}</div>
                 <div className="flex items-center gap-2 mb-4">
-                  <div className="text-purple-400/90 text-2xl md:text-3xl font-bold">
+                  <div className="text-sky-600 text-2xl md:text-3xl font-bold">
                     {etape.numero}
                   </div>
-                  <div className="h-1 w-8 md:w-12 bg-white/20 rounded-full overflow-hidden">
-                    <div className="h-full bg-white/60 w-0 group-hover:w-full transition-all duration-700" />
+                  <div className="h-1 w-8 md:w-12 bg-slate-200 rounded-full overflow-hidden">
+                    <div className="h-full bg-sky-500 w-0 group-hover:w-full transition-all duration-700" />
                   </div>
                 </div>
-                <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-stone-100">
+                <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-slate-800">
                   {etape.titre}
                 </h3>
-                <div className="text-xs md:text-sm text-purple-400/70 mb-2">
+                <div className="text-xs md:text-sm text-sky-600 mb-2">
                   {etape.sousTitre}
                 </div>
-                <p className="text-sm md:text-base text-stone-400">
+                <p className="text-sm md:text-base text-slate-600">
                   {etape.description}
                 </p>
               </div>

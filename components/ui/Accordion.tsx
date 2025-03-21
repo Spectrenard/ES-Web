@@ -1,4 +1,3 @@
-import { motion, Variants } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import React, { useState, useEffect } from "react";
 
@@ -26,7 +25,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768); // 768px est le breakpoint md de Tailwind
+      setIsMobile(window.innerWidth < 768);
     };
 
     checkMobile();
@@ -35,86 +34,31 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const cardVariants: Variants = {
-    collapsed: {
-      height: "70px",
-      transition: { type: "spring", stiffness: 300, damping: 15 },
-    },
-    expanded: {
-      height: "auto",
-      transition: { type: "spring", stiffness: 300, damping: 15 },
-    },
-  };
-
-  const contentVariants: Variants = {
-    collapsed: { opacity: 0 },
-    expanded: {
-      opacity: 1,
-      transition: { delay: 0.1 },
-    },
-  };
-
-  if (isMobile) {
-    return (
-      <div
-        className="w-full backdrop-blur-sm bg-white/5 border border-white/10 
-                   my-4 cursor-pointer select-none rounded-xl 
-                   hover:bg-white/10 transition-colors duration-300"
-        onClick={onToggle}
-      >
-        <div className="flex items-center justify-between p-5">
-          <h2 className="text-base font-medium text-stone-100 text-center flex-1">
-            {title}
-          </h2>
-          <div
-            className={`text-purple-400 ml-4 flex-shrink-0 transition-transform duration-300 ${
-              isExpanded ? "rotate-180" : ""
-            }`}
-          >
-            <ChevronDown size={20} />
-          </div>
-        </div>
-        <div
-          className={`px-5 pb-5 overflow-hidden transition-all duration-300 ${
-            isExpanded ? "block" : "hidden"
-          }`}
-        >
-          <p className="text-sm text-stone-400 leading-relaxed">{content}</p>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <motion.div
-      className="w-full backdrop-blur-sm bg-white/5 border border-white/10 
-                 my-4 cursor-pointer select-none overflow-hidden rounded-xl 
-                 hover:bg-white/10 transition-colors duration-300"
-      variants={cardVariants}
-      initial="collapsed"
-      animate={isExpanded ? "expanded" : "collapsed"}
+    <div
+      className="w-full bg-white border border-slate-200 
+                 my-4 cursor-pointer select-none rounded-xl 
+                 hover:border-sky-200 transition-colors duration-300 shadow-sm"
       onClick={onToggle}
     >
       <div className="flex items-center justify-between p-5">
-        <h2 className="text-base font-medium text-stone-100  flex-1">
-          {title}
-        </h2>
-        <motion.div
-          animate={{ rotate: isExpanded ? 180 : 0 }}
-          className="text-white ml-4 flex-shrink-0"
+        <h2 className="text-base font-medium text-slate-800 flex-1">{title}</h2>
+        <div
+          className={`text-sky-600 ml-4 flex-shrink-0 transition-transform duration-300 ${
+            isExpanded ? "rotate-180" : ""
+          }`}
         >
           <ChevronDown size={20} />
-        </motion.div>
+        </div>
       </div>
-      <motion.div
-        className="px-5 pb-5"
-        variants={contentVariants}
-        initial="collapsed"
-        animate={isExpanded ? "expanded" : "collapsed"}
+      <div
+        className={`px-5 pb-5 overflow-hidden transition-all duration-300 ${
+          isExpanded ? "block max-h-96" : "hidden max-h-0"
+        }`}
       >
-        <p className="text-sm text-stone-400 leading-relaxed">{content}</p>
-      </motion.div>
-    </motion.div>
+        <p className="text-sm text-slate-600 leading-relaxed">{content}</p>
+      </div>
+    </div>
   );
 };
 
@@ -159,7 +103,7 @@ const accordionItems = [
   {
     title: "Quelles technologies utilisez-vous ?",
     content:
-      "Nous maîtrisons les technologies modernes comme React, TypeScript, Tailwind tout en étant à l’aise avec des plateformes populaires comme WordPress et Shopify pour une solution adaptée à chaque projet.",
+      "Nous maîtrisons les technologies modernes comme React, TypeScript, Tailwind tout en étant à l'aise avec des plateformes populaires comme WordPress et Shopify pour une solution adaptée à chaque projet.",
   },
 ];
 

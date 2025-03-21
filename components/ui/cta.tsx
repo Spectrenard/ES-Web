@@ -23,17 +23,11 @@ export const StandaloneShineButton = ({
           "overflow-hidden transition-all duration-200", // Transition plus rapide ici
           "flex items-center gap-2",
 
-          // Colors & Effects
-          "bg-slate-900/10 text-slate-50",
-          "hover:ring-2 hover:ring-offset-2 hover:ring-slate-800/40",
-          "hover:bg-gradient-to-r hover:from-slate-800 hover:to-slate-700",
-          "shadow-lg shadow-slate-900/20",
-
-          // Dark mode
-          "dark:bg-slate-800/90 dark:text-slate-100",
-          "dark:hover:ring-slate-600 dark:hover:ring-offset-slate-950",
-          "dark:hover:from-slate-700 dark:hover:to-slate-800",
-          "dark:shadow-slate-950/50",
+          // Colors & Effects - version claire
+          "bg-gradient-to-r from-sky-500 to-indigo-500 text-white",
+          "hover:from-sky-600 hover:to-indigo-600",
+          "hover:ring-2 hover:ring-offset-2 hover:ring-sky-400/40",
+          "shadow-md shadow-sky-500/20",
 
           // Transform effect
           "hover:scale-[1.02] active:scale-[0.98]",
@@ -49,9 +43,8 @@ export const StandaloneShineButton = ({
         <span
           className="absolute right-0 w-8 h-32 -mt-12 
           transition-all duration-700 transform translate-x-12 
-          bg-white opacity-10 rotate-12 
-          group-hover:-translate-x-96 ease
-          dark:bg-slate-300" // Animation plus longue avec -translate-x-96
+          bg-white opacity-30 rotate-12 
+          group-hover:-translate-x-96 ease" // Animation plus longue avec -translate-x-96
         />
 
         {/* Button content */}

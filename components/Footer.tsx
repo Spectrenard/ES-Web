@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/10 bg-gray-950/50 backdrop-blur-xl">
+    <footer className="border-t border-slate-200 bg-white/90 backdrop-blur-xl">
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           {/* Logo */}
@@ -21,31 +21,31 @@ export default function Footer() {
           </div>
 
           {/* Liens légaux */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-stone-400">
+          <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-slate-600">
             <Link
               href="/mentions-legales"
-              className="hover:text-purple-400 transition-colors"
+              className="hover:text-sky-600 transition-colors"
             >
               Mentions légales
             </Link>
-            <span className="hidden sm:inline text-stone-600">|</span>
+            <span className="hidden sm:inline text-slate-300">|</span>
             <Link
               href="/politique-confidentialite"
-              className="hover:text-purple-400 transition-colors"
+              className="hover:text-sky-600 transition-colors"
             >
               Politique de confidentialité
             </Link>
           </div>
 
           {/* Copyright */}
-          <div className="flex items-center gap-2 text-sm text-stone-500">
+          <div className="flex items-center gap-2 text-sm text-slate-400">
             <span>© {currentYear}</span>
-            <span className="text-stone-400">Made by</span>
+            <span className="text-slate-600">Made by</span>
             <a
               href="https://elyesasahin.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-purple-400 hover:text-purple-300 transition-colors"
+              className="text-sky-600 hover:text-sky-700 transition-colors"
             >
               Spectre
             </a>
