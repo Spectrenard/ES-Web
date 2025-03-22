@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Instrument_Sans } from "next/font/google";
 import { Syne } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 // Configuration de Inter
@@ -40,6 +41,7 @@ export default function RootLayout({
         className={`${inter.variable} ${instrumentSans.variable} ${syne.variable} font-sans  overflow-x-hidden`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
