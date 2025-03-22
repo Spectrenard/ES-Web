@@ -27,7 +27,11 @@ const syne = Syne({
 
 export const metadata: Metadata = {
   title: "ES Web",
-  description: "ES Web - Votre description",
+  description:
+    "ES Web - Agence de développement web spécialisée dans la création de sites et applications modernes, performants et accessibles. Solutions sur mesure pour répondre à vos besoins numériques.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
